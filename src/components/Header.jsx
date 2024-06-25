@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 function Header() {
     return (
@@ -17,19 +17,21 @@ function Header() {
         mx-auto
         max-w-7xl' >
                 <div className='flex items-center' >
+                    <Link to='/'>
                     <h1 className='ml-2 text-xl font-semibold
                     bg-gradient-to-b from-[#4FACFE] from-21%
                     to-[#00F2FE] bg-clip-text text-transparent' >
                         take it easy
                     </h1>
+                    </Link>
                 </div>
                 <nav className='flex items-center ' >
                     <a href='#' className='ml-8 text-base text-[#6C7580]' >
                         Pricing
                     </a>
-                    <a href='#' className='ml-8 text-base text-[#6C7580]' >
+                    <Link to='about' className='ml-8 text-base text-[#6C7580]' >
                         About us
-                    </a>
+                    </Link>
                     <a href='#' className='ml-8 text-base text-[#6C7580]' >
                         Login
                     </a>
