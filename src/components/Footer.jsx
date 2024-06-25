@@ -31,7 +31,7 @@ function Footer() {
             <p className='text-sm text-[#6C7580]'>Contact</p>
         </div>
     </div>
-    <p className='text-sm mb-2 text-[#6C7580]'>Made by Khỉ Con</p>
+    <p className='text-sm mb-2 text-[#4B5563]'>Made by Khỉ Con</p>
     <p className='text-sm text-[#6C7580]'>© TakeItEasy 2024. All Rights Reserved.</p>
     </footer>
   );
