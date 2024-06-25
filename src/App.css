@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+::-webkit-scrollbar {
+  margin-right: 1px;
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  margin-right: 1px;
+  border-radius: 100%;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  margin-right: 1px;
+  background: linear-gradient(to bottom, #4FACFE 21%, #00F2FE);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #1c93fc 21%, #019199);
+}
