@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,9 +12,10 @@ function App() {
   return (
     <>
       <Header />
-      <h1 className="text-3xl font-bold underline">
+      <h1 className="text-3xl font-bold underline my-96">
         Hello world!
       </h1>
+      <Footer />
     </>
   )
 }
