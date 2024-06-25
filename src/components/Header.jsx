@@ -40,7 +40,7 @@ function Header() {
                     to-[#4FACFE]
                     px-6
                     flex items-center rounded-full' >
-                        <p className='text-white font-medium' >
+                        <p className='text-white font-semibold' >
                             Get Started
                         </p>
                     </a>
