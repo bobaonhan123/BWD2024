@@ -2,7 +2,7 @@ import { faCircleCheck } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 function MainPage() {
     return (
-        <div className='mt-11 w-full'>
+        <div className='pt-11 w-full'>
             <div className='w-full flex flex-col items-center'>
                 <h1 className='font-semibold text-7xl mt-28 mb-10'>
                     <p className='bg-gradient-to-r
