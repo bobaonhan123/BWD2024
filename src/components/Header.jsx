@@ -32,9 +32,9 @@ function Header() {
                     <Link to='about' className='ml-8 text-base text-[#6C7580]' >
                         About us
                     </Link>
-                    <a href='#' className='ml-8 text-base text-[#6C7580]' >
+                    <Link to='login' className='ml-8 text-base text-[#6C7580]' >
                         Login
-                    </a>
+                    </Link>
                     <a href='#' className='ml-8 text-base h-10 
                     bg-gradient-to-r from-[#00F2FE] from-21%
                     to-[#4FACFE]
