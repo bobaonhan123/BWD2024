@@ -12,14 +12,14 @@ import AboutPage from './Pages/AboutPage'
 function App() {
 
   return (
-    <>
+    <div className='bg-[#f6f7fb]'>
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   )
 }
 
