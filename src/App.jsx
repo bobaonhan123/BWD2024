@@ -9,7 +9,7 @@ import AboutPage from './Pages/AboutPage'
 function App() {
 
   return (
-    <div className='bg-[#f6f7fb]'>
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
