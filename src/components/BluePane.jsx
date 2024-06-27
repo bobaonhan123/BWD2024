@@ -35,8 +35,8 @@ export default function BluePane({ onClick, option }) {
                     alt="womanwithtablet"
                     className={`
                     bottom-0 absolute transition-transform duration-50 ease-in-out
-                    h-[90%] w-auto object-cover object-right
-                    ${option ? 'right-[-10%]' : 'left-[-10%] transform -scale-x-100'}
+                    h-[95%] w-auto object-cover object-right
+                    ${option ? 'right-[-16.5%]' : 'left-[-16.5%] transform -scale-x-100'}
                 `}
                 />
             </div>
