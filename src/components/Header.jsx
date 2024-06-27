@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <header className='fixed
+        z-50
         top-0
         left-0
         h-20
