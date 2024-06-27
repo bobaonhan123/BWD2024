@@ -38,7 +38,7 @@ function MainPage() {
                         <p className='text-white font-semibold text-lg' >
                             Let’s start explore the magic
                         </p>
-                    </a>
+                </a>
             </div>
         </div>
     )
