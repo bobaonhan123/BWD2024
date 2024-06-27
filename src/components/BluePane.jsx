@@ -22,7 +22,7 @@ export default function BluePane({ onClick, option }) {
                 <p
                     className={`
                     duration-500
-                    font-semibold text-lg text-white 
+                    font-semibold text-xl text-white 
                     w-36 text-start ml-6 mt-6
                     ${option ? 'transform translate-x-0' : 'transform translate-x-[90%]'}
                 `}
@@ -35,6 +35,7 @@ export default function BluePane({ onClick, option }) {
                     alt="womanwithtablet"
                     className={`
                     bottom-0 absolute transition-transform duration-50 ease-in-out
+                    h-[90%] w-auto object-cover object-right
                     ${option ? 'right-[-10%]' : 'left-[-10%] transform -scale-x-100'}
                 `}
                 />
