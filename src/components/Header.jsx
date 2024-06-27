@@ -1,15 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { HeaderHidePage } from "../configurations/ComponentConfigurations";
 
 function Header() {
+    const location = useLocation();
+    const isHidden = HeaderHidePage.includes(location.pathname.slice(1));
+    if (isHidden) return null;
+    
     return (
-        <header className='fixed
+        <header className={`fixed
         z-50
         top-0
         left-0
         h-20
         w-full
         bg-transparent
-        backdrop-blur-md' >
+        backdrop-blur-md
+        
+        `} >
             <div className='flex
         items-center
         justify-between

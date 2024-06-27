@@ -1,4 +1,11 @@
+import { Link, useLocation } from "react-router-dom";
+import { FooterHidePage } from "../configurations/ComponentConfigurations";
+
+
 function Footer() {
+    const location = useLocation();
+    const isHidden = FooterHidePage.includes(location.pathname.slice(1));
+    if (isHidden) return null;
     return (
         <footer className='w-full mx-0 my-0
         h-64 mt-10 flex flex-col justify-center'>
