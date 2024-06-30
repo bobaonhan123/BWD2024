@@ -9,6 +9,7 @@ export default function BluePane({ onClick, option }) {
                     option ? 'transform translate-x-full' : 'transform translate-x-0'
                 }
                 flex justify-center items-center    
+                max-lg:hidden
             `}
             onClick={onClick}
         >
