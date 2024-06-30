@@ -4,7 +4,7 @@ import logo from '../assets/images/google_logo.svg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
-export default function RegisterComponent({onLoginClick}) {
+export default function RegisterComponent({onLoginClick, option}) {
   return (
     <div
       className={`absolute 
@@ -12,7 +12,8 @@ export default function RegisterComponent({onLoginClick}) {
           h-full rounded-3xl 
           bg-white z-0 transition-transform duration-500 ease-in-out
           flex flex-col
-          justify-center`}
+          justify-center
+          ${!option ? 'max-lg:hidden' : 'max-lg:w-full'}`}
     >
       <Link to="/"><h1 className='mb-2 text-3xl font-semibold
                     bg-gradient-to-b from-[#4FACFE] from-21%
@@ -20,14 +21,16 @@ export default function RegisterComponent({onLoginClick}) {
         take it easy
       </h1>
       </Link>
-      <p className='text-[#6C7580] text-lg mx-20 mb-10'>
+      <p className='text-[#6C7580] text-lg mx-20 mb-10
+      max-md:text-base'>
       The better way to learn and practice
       new words!
       </p>
 
       <button className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
-      flex items-center justify-center">
+      flex items-center justify-center
+      max-md:mx-4">
         <img src={logo} alt="google logo" className="w-6 h-6 mr-4" />
         <p className="text-[#4B5563]">Sign up with google</p>
       </button>
@@ -42,7 +45,8 @@ export default function RegisterComponent({onLoginClick}) {
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
       flex items-center justify-center px-10
-      placeholder-[#6C7580]"
+      placeholder-[#6C7580]
+      max-md:mx-4"
         placeholder='Your email' />
 
       <button className='mx-14 h-12 
@@ -50,8 +54,10 @@ export default function RegisterComponent({onLoginClick}) {
                     to-[#4FACFE]
                     px-10 my-6
                     flex items-center rounded-full justify-center
-                    text-white' >
-        <p className='text-lg pr-2' >
+                    text-white
+      max-md:mx-4' >
+        <p className='text-lg pr-2
+      max-md:mx-4 max-md:text-base' >
           Send Magic Link
         </p>
         <FontAwesomeIcon icon={faArrowRight} />
