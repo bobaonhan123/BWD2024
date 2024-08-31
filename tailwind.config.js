@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
           fontFamily: {
-            sans: ['Poppins', ...defaultTheme.fontFamily.sans]
+            sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+            montserrat: ['Montserrat', ...defaultTheme.fontFamily.sans],
           }
     },
     colors: {
