@@ -77,7 +77,7 @@ function Header() {
                     <Link to='login' className='ml-8 text-base text-[#6C7580] max-lg:text-lg max-lg:ml-2 max-lg:my-2' >
                         Login
                     </Link>
-                    <a href='#' className='ml-8 text-base h-10 
+                    <Link to='dashboard' className='ml-8 text-base h-10 
                     bg-gradient-to-r from-[#00F2FE] from-21%
                     to-[#4FACFE]
                     px-6
@@ -91,7 +91,7 @@ function Header() {
                         <p className='text-white font-semibold text-center' >
                             Get Started
                         </p>
-                    </a>
+                    </Link>
                 </nav>
             </div>
 

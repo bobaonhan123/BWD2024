@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import MainPage from './Pages/MainPage'
 import AboutPage from './Pages/AboutPage'
 import LoginPage from './Pages/LoginPage'
+import Dashboard from './Pages/Dashboard'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </div>
