@@ -12,12 +12,12 @@ function LeftBar() {
     return (
         <div className={`fixed
         max-w-96 w-1/5 
-        h-screen 
-        left-0 
+        h-screen
         top-0
         flex
         flex-col
         items-center
+        left-[1%]
         `} >
             <div className='flex items-center' >
                     <Link to='/'>
