@@ -7,7 +7,7 @@ import { HeaderHidePage } from "../configurations/ComponentConfigurations";
 
 function Header() {
     const location = useLocation();
-    const isHidden = HeaderHidePage.includes(location.pathname.slice(1));
+    const isHidden = HeaderHidePage.some(page => location.pathname.includes(page));
     if (isHidden) return null;
 
     const [showMenu, setShowMenu] = useState(false);

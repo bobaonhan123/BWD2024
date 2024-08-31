@@ -39,10 +39,10 @@ function LeftBar() {
             justify-evenly
             text-[#6C7580]
             shadow-2xl">
-                <Link to='/'>
-                    <p>Dashborad</p>
+                <Link to='/dashboard'>
+                    <p>Dashboard</p>
                 </Link>
-                <Link to='/'>
+                <Link to='/dashboard/flashcards'>
                     <p>Flashcards</p>
                 </Link>
                 <Link to='/'>
