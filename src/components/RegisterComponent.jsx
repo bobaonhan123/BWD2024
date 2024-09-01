@@ -1,10 +1,38 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { register } from '../api/userAPI'
 
 import logo from '../assets/images/google_logo.svg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 export default function RegisterComponent({onLoginClick, option}) {
+  const [fullname, setFullname] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleFullnameChange = (e) => {
+    setFullname(e.target.value)
+  }
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value)
+  }
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value)
+  }
+
+  const handleRegister = async () => {
+    try {
+      const response = await register(fullname, email, password,true) 
+      console.log(response)
+    }
+    catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div
       className={`absolute 
@@ -26,28 +54,30 @@ export default function RegisterComponent({onLoginClick, option}) {
       The better way to learn and practice
       new words!
       </p>
-
-      <button className="
+      <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
-      flex items-center justify-center
-      max-md:mx-4">
-        <img src={logo} alt="google logo" className="w-6 h-6 mr-4" />
-        <p className="text-[#4B5563]">Sign up with google</p>
-      </button>
+      flex items-center justify-center px-10
+      placeholder-[#6C7580]
+      max-md:mx-4 mb-4"
+        placeholder='Your full name' value={fullname} 
+        onChange={handleFullnameChange}/>
 
-      <div className='my-6'>
-        <div className='mx-auto w-10 bg-white relative z-20'>
-          <p className='font-light text-[#6C7580]'>OR</p>
-        </div>
-        <hr className='mx-20 bg-[#D9D9D9] border-[#D9D9D9]
-        relative top-[-12px] z-10' />
-      </div>
+      <input className="
+      mx-14 h-12 rounded-full bg-[#f6f7fb]
+      flex items-center justify-center px-10
+      placeholder-[#6C7580]
+      max-md:mx-4 mb-4"
+        placeholder='Your email' value={email} 
+        onChange={handleEmailChange}/>
+
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
       flex items-center justify-center px-10
       placeholder-[#6C7580]
       max-md:mx-4"
-        placeholder='Your email' />
+        type='password'
+        placeholder='Your password' value={password}
+        onChange={handlePasswordChange}/>
 
       <button className='mx-14 h-12 
                     bg-gradient-to-r from-[#00F2FE] from-21%
@@ -57,8 +87,9 @@ export default function RegisterComponent({onLoginClick, option}) {
                     text-white
       max-md:mx-4' >
         <p className='text-lg pr-2
-      max-md:mx-4 max-md:text-base' >
-          Send Magic Link
+      max-md:mx-4 max-md:text-base' 
+      onClick={handleRegister}>
+          Register
         </p>
         <FontAwesomeIcon icon={faArrowRight} />
       </button>
