@@ -46,7 +46,7 @@ function MainPage() {
                     max-md:mx-5' >
                         <p className='text-white font-semibold text-lg
                         max-md:text-base' >
-                            Let’s start explore the magic
+                            Let’s start explore the magic Nhan Ho
                         </p>
                 </a>
             </div>
