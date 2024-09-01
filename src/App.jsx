@@ -6,7 +6,7 @@ import AboutPage from "./Pages/AboutPage";
 import LoginPage from "./Pages/LoginPage";
 import LearningPage from "./Pages/LearningPage";
 import AppLayout from "./Pages/AppLayout";
-import DashBoardPage from "./Pages/DashBoardPage";
+import DashBoardPage from "./Pages/DashboardPages/DashBoardPage";
 import Flashcard from "./Pages/Flashcard";
 import CreatePage from "./Pages/CreatePage";
 import CardDetails from "./Pages/CardDetails";

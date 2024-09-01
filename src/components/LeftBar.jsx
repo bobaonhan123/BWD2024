@@ -16,7 +16,7 @@ function LeftBar() {
       <div className="flex items-center">
         <Link to="/">
           <h1
-            className="ml-2 text-3xl font-semibold
+            className="ml-2 mt-10 text-2xl font-semibold
                     bg-gradient-to-b from-[#4FACFE] from-21%
                     to-[#00F2FE] bg-clip-text text-transparent
                     my-6
