@@ -1,25 +1,38 @@
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import MainPage from './Pages/MainPage'
-import AboutPage from './Pages/AboutPage'
-import LoginPage from './Pages/LoginPage'
-import Dashboard from './Pages/Dashboard'
+import "./App.css";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
+import MainPage from "./Pages/MainPage";
+import AboutPage from "./Pages/AboutPage";
+import LoginPage from "./Pages/LoginPage";
+import LearningPage from "./Pages/LearningPage";
+import AppLayout from "./Pages/AppLayout";
+import DashBoardPage from "./Pages/DashBoardPage";
+import Flashcard from "./Pages/Flashcard";
+import CreatePage from "./Pages/CreatePage";
+import CardDetails from "./Pages/CardDetails";
 
 function App() {
   return (
     <div>
-      <Header />
       <Routes>
-        <Route path="/" element={<MainPage />} />
+        <Route index element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/app" element={<AppLayout />}>
+          <Route index element={<Navigate replace to="dashboard" />} />
+          <Route path="dashboard" element={<DashBoardPage />} />
+          <Route path="flashcards" element={<Flashcard />}>
+            <Route path="create" element={<CreatePage />} />
+          </Route>
+          <Route path="flashcards/:id" element={<CardDetails />} />
+        </Route>
+
+        {/* remove this before push */}
+        <Route path="/learning" element={<LearningPage />} />
       </Routes>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
