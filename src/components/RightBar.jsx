@@ -7,7 +7,7 @@ function RightBar() {
         className="flex flex-col items-center mt-28 bg-white w-5/6 rounded-3xl
       relative
       pt-10
-      shadow-2xl"
+      shadow-lg"
       >
         <img
           src="https://variety.com/wp-content/uploads/2023/12/MCDAVTH_WD032.jpg"
@@ -17,7 +17,7 @@ function RightBar() {
         top-[-4.5rem] z-50
         object-cover
         border-4 border-white
-        shadow-2xl
+        shadow-lg
         "
         />
 
@@ -79,7 +79,7 @@ function RightBar() {
         className="flex flex-col items-center my-6
       bg-white w-5/6 rounded-3xl
       pt-4
-      shadow-2xl
+      shadow-lg
       h-[60vh]"
       >
         <h1 className="text-[#4b5563]">Top Learners</h1>
