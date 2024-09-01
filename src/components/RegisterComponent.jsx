@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { register } from '../api/userAPI'
 
 import logo from '../assets/images/google_logo.svg'
@@ -27,8 +30,14 @@ export default function RegisterComponent({onLoginClick, option}) {
     try {
       const response = await register(fullname, email, password,true) 
       console.log(response)
+      if(!response.email) {
+        throw new Error('Register failed. Please check your email or password.')
+      }
+      toast.success('Register successfully!')
+      onLoginClick()
     }
     catch (error) {
+      toast.error('Register failed. Please check your email')
       console.log(error)
     }
   }
@@ -85,10 +94,11 @@ export default function RegisterComponent({onLoginClick, option}) {
                     px-10 my-6
                     flex items-center rounded-full justify-center
                     text-white
-      max-md:mx-4' >
+      max-md:mx-4'
+      onClick={handleRegister} >
         <p className='text-lg pr-2
       max-md:mx-4 max-md:text-base' 
-      onClick={handleRegister}>
+      >
           Register
         </p>
         <FontAwesomeIcon icon={faArrowRight} />
