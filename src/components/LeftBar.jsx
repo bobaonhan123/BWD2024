@@ -1,9 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-
-import { HeaderHidePage } from "../configurations/ComponentConfigurations";
+import { Link } from "react-router-dom";
 
 function LeftBar() {
   return (
@@ -42,10 +37,10 @@ function LeftBar() {
             text-[#6C7580]
             shadow-md"
       >
-        <Link to="/dashboard">
+        <Link to="dashboard">
           <p>Dashboard</p>
         </Link>
-        <Link to="/dashboard/flashcards">
+        <Link to="flashcards">
           <p>Flashcards</p>
         </Link>
         <Link to="/">
