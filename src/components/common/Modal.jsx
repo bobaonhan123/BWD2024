@@ -14,7 +14,6 @@ const Modal = ({ isOpen, onClose, children }) => {
         onClick={handleBackdropClick}
     >
       <div className="bg-white rounded-lg p-6 max-w-fit w-full">
-    
         {children}
       </div>
     </div>
