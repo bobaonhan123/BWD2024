@@ -10,7 +10,7 @@ export default function CardSet({ data }) {
   return (
     <Link to={`${data.id}`}>
       <div
-        className="w-full min-h-56 bg-white rounded-2xl
+        className="w-full min-h-56 h-56 bg-white rounded-2xl
       shadow-xl shadow-[#9b9b9b17]
       px-6 pt-5 pb-2
       border-[1px]
@@ -30,21 +30,12 @@ export default function CardSet({ data }) {
                 <FontAwesomeIcon icon={faUsers} /> {data.members}
               </p>
             </div>
-            {data.type && (
-              <p
-                className="mt-2
-              text-sm text-[#6C7580]"
-              >
-                <FontAwesomeIcon icon={faFolderOpen} />
-                {data.type}
-              </p>
-            )}
           </div>
           <div
             className="flex justify-between items-center
           text-[#6C7580]"
           >
-            <p className="text-sm  flex items-center">
+            <p className="text-sm flex items-center">
               <img
                 src={data.avatar}
                 alt="avt"
