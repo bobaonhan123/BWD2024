@@ -1,6 +1,5 @@
 import { FlashcardArray } from "react-quizlet-flashcard";
 import CardInfoHeader from "../components/flashcards/CardInfoHeader";
-import SearchBar from "../components/SearchBar";
 
 const cards = [
   {
