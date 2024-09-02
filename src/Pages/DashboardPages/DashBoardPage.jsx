@@ -1,6 +1,8 @@
 import FindNewWord from "../../components/FindNewWord";
 import Review from "../../components/Review";
 import MemorizeChart from "../../components/MemorizeChart";
+import RecentyCreated from "../../components/RecentlyCreated";
+import DashboardCalendar from "../../components/DashboardCalendar";
 
 export default function DashBoardPage() {
     return (
@@ -12,6 +14,10 @@ export default function DashBoardPage() {
                     <div className="flex flex-row space-x-6 min-w-max ">
                         <Review />
                         <MemorizeChart />
+                    </div>
+                    <div className="flex flex-row space-x-6 min-w-max ">
+                        <RecentyCreated />
+                        <DashboardCalendar />
                     </div>
                 </div>
             </div>
