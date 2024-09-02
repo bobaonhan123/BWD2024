@@ -1,11 +1,12 @@
+import { data } from "autoprefixer";
 import { server } from "../configurations/AxiosConfigurations";
 
 export const login = async (email, password) => {
     try {
-        const response = await server.post('/auth/login', { email, password })
+        let response = await server.post('/auth/login', { email, password })
         return response.data
     } catch (error) {
-        return error.response.data
+        return error
     }
 }
 
