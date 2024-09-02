@@ -27,6 +27,10 @@ function App() {
             <Route path="create" element={<CreatePage />} />
           </Route>
           <Route path="flashcards/:id" element={<CardDetails />} />
+          <Route
+            path="flashcards/:id/flashcard-learning"
+            element={<LearningPage />}
+          />
         </Route>
 
         {/* remove this before push */}
