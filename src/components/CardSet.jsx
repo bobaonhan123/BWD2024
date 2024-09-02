@@ -21,7 +21,7 @@ export default function CardSet({ data }) {
       ease-in-out
       "
       >
-        <div className="flex flex-col justify-between h-full">
+        <div className="flex flex-col h-full justify-between">
           <div className="flex flex-col items-start">
             <h1 className="text-base text-left">{data.title}</h1>
             <div className="flex text-sm text-[#6C7580] mt-2">
@@ -30,21 +30,12 @@ export default function CardSet({ data }) {
                 <FontAwesomeIcon icon={faUsers} /> {data.members}
               </p>
             </div>
-            {data.type && (
-              <p
-                className="mt-2
-              text-sm text-[#6C7580]"
-              >
-                <FontAwesomeIcon icon={faFolderOpen} />
-                {data.type}
-              </p>
-            )}
           </div>
           <div
             className="flex justify-between items-center
           text-[#6C7580]"
           >
-            <p className="text-sm  flex items-center">
+            <p className="text-sm flex items-center">
               <img
                 src={data.avatar}
                 alt="avt"
