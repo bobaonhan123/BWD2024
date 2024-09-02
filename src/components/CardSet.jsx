@@ -10,7 +10,7 @@ export default function CardSet({ data }) {
   return (
     <Link to={`${data.id}`}>
       <div
-        className="w-full min-h-56 bg-white rounded-2xl
+        className="w-full min-h-56 h-56 bg-white rounded-2xl
       shadow-xl shadow-[#9b9b9b17]
       px-6 pt-5 pb-2
       border-[1px]
@@ -21,7 +21,7 @@ export default function CardSet({ data }) {
       ease-in-out
       "
       >
-        <div className="flex flex-col h-full justify-between">
+        <div className="flex flex-col justify-between h-full">
           <div className="flex flex-col items-start">
             <h1 className="text-base text-left">{data.title}</h1>
             <div className="flex text-sm text-[#6C7580] mt-2">
