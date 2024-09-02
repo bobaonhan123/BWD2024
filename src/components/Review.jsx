@@ -5,13 +5,15 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 function Review() {
   return (
-    <div className=" bg-white rounded-xl text-gray-normal  px-8 flex flex-col justify-center space-y-4 basis-2/5">
-      <h1 className="text-gray-main font-semibold text-center">
+    <div className=" bg-white rounded-xl text-gray-normal px-8
+    py-8 flex flex-col justify-between space-y-4 basis-2/5">
+      <h1 className="text-gray-main font-semibold text-left
+      w-full text-xl">
         <FontAwesomeIcon icon={faBell} className="mr-2" />
         Your review
       </h1>
-      <p className="text-center">
-        <span className="text-gray-main font-semibold text-2xl mr-3 ">4</span>
+      <p className="text-center text-sm text-gray-normal">
+        <span className="text-gray-normal font-semibold text-5xl mr-3 ">4</span>
         words
       </p>
       <button className="bg-gradient-to-r
@@ -19,7 +21,8 @@ function Review() {
         to-[#4FACFE]
         rounded-full
         text-white
-        px-4 py-2">
+        px-2 py-2
+        mx-10">
         Review Now <FontAwesomeIcon icon={faArrowRight} />
       </button>
     </div>
