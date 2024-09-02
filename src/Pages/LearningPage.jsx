@@ -1,5 +1,6 @@
 import { FlashcardArray } from "react-quizlet-flashcard";
 import CardInfoHeader from "../components/flashcards/CardInfoHeader";
+import SearchAndCategory from "../components/SearchAndCategory";
 
 const cards = [
   {
@@ -38,7 +39,8 @@ const cards = [
 function LearningPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="flex flex-col items-center">
+      <SearchAndCategory />
+      <div className="flex flex-col items-center mt-8">
         <CardInfoHeader />
         <div className="h-10"></div>
         <FlashcardArray
