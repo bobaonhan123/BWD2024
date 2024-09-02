@@ -39,7 +39,6 @@ const cards = [
 function LearningPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <SearchBar />
       <div className="flex flex-col items-center">
         <CardInfoHeader />
         <div className="h-10"></div>

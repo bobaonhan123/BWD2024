@@ -10,6 +10,7 @@ import {
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 
 import Card from "../components/Card";
+import { Link } from "react-router-dom";
 
 export default function CardDetails() {
   return (
@@ -44,16 +45,22 @@ export default function CardDetails() {
         </div>
         <div className="mt-8 flex items-center justify-between">
           <div className="flex">
-            <div
-              className="bg-transparent text-[#6C7580]
+            <Link to="flashcard-learning">
+              <div
+                className="bg-transparent text-[#6C7580]
                   px-6 py-2 rounded-lg
                   border-[1px] border-[#25252533]
                   text-xs h-9
                   cursor-pointer"
-            >
-              <FontAwesomeIcon icon={faFlag} className="mr-1 text-[#4FACFE]" />
-              Flashcard
-            </div>
+              >
+                <FontAwesomeIcon
+                  icon={faFlag}
+                  className="mr-1 text-[#4FACFE]"
+                />
+                Flashcard
+              </div>
+            </Link>
+
             <div
               className="bg-transparent text-[#6C7580]
                   px-6 py-2 rounded-lg
