@@ -3,9 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCrown, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { v4 as uuidv4 } from "uuid"; // Import uuid để tạo ID duy nhất
 import CardCreateForm from "./CardCreateForm";
+import { useDisclosure } from "../../hooks/common/use-disclosure";
+import Modal from "../common/Modal";
+import ImportModalContent from "./ImportModalContent";
 
 function FlashcardForm() {
   const [flashcards, setFlashcards] = useState([]);
+  const {isOpen, open, close }=useDisclosure()
+
+  
+
 
   // Hàm thêm flashcard mới với ID duy nhất
   const addFlashcard = () => {
@@ -13,23 +20,14 @@ function FlashcardForm() {
     setFlashcards([...flashcards, newFlashcard]);
   };
 
-  // Hàm xử lý import chuỗi với ID duy nhất
-  const handleImport = (importString) => {
-    const lines = importString.split("\n");
-    const newFlashcards = lines.map((line) => {
-      const [term, meaning] = line.split(",");
-      return { id: uuidv4(), term: term.trim(), meaning: meaning.trim() }; // Tạo ID duy nhất
-    });
-
-    setFlashcards([...flashcards, ...newFlashcards]);
-  };
+  
 
   // Hàm xóa flashcard dựa trên ID
   const removeFlashcard = (id) => {
     setFlashcards(flashcards.filter((flashcard) => flashcard.id !== id));
   };
 
-  return (
+  return (<>
     <div className="max-w mx-auto p-4 text-main-text">
       <h1 className="text-2xl font-semibold mb-4 text-start">
         Create a new flashcard set
@@ -46,7 +44,7 @@ function FlashcardForm() {
         />
         <div className="w-1/3">
           <button
-            onClick={() => handleImport("term1,meaning1\nterm2,meaning2")} // Example import
+            onClick={open} // Example import
             className="w-full p-2 bg-white border-2 border-normal-text border-opacity-30 mb-2 rounded-md focus:border-normal-text focus:outline-none bg-blue-500 text-normal-text hover:bg-blue-600"
           >
             <FontAwesomeIcon icon={faPlus} /> Import
@@ -77,6 +75,10 @@ function FlashcardForm() {
         + Create new word
       </button>
     </div>
+    <Modal isOpen={isOpen} onClose={close}>
+      <ImportModalContent flashcardState={[flashcards,setFlashcards]} closeModal={close}/>
+    </Modal>
+  </>
   );
 }
 
