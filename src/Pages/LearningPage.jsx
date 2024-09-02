@@ -1,28 +1,14 @@
 import { FlashcardArray } from "react-quizlet-flashcard";
 import CardInfoHeader from "../components/flashcards/CardInfoHeader";
 import SearchAndCategory from "../components/SearchAndCategory";
+import FontCard from "../components/flashcards/FontCard";
+import BackCard from "../components/flashcards/BackCard";
 
 const cards = [
   {
     id: 1,
-    frontHTML: (
-      <div className="font-semibold ">
-        What is the capital of <u>Alaska</u>?
-      </div>
-    ),
-    backHTML: (
-      <div className="flex flex-col justify-center items-center">
-        <p>
-          to stop doing an activity before you have finished it từ bỏ, đầu hàng,
-          không làm nữa dù chưa xong
-        </p>
-        <img
-          src="https://www.travelalaska.com/sites/default/files/2021-12/Destinations_CitiesTowns_Juneau_Hero_%28ATIA%29_0.jpg"
-          alt="Juneau"
-          className="mt- w-44 h-32 object-cover rounded-md"
-        />
-      </div>
-    ),
+    frontHTML: <FontCard />,
+    backHTML: <BackCard />,
   },
   {
     id: 2,
