@@ -11,12 +11,14 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 
 import Card from "../components/Card";
 import { Link } from "react-router-dom";
+import SearchAndCategory from "../components/SearchAndCategory";
 
 export default function CardDetails() {
   return (
     <div className="w-3/5 mx-auto pt-8">
+      <SearchAndCategory />
       <div
-        className="w-full p-8 bg-white rounded-2xl
+        className="w-full mt-8 p-8 bg-white rounded-2xl
       min-h-screen"
       >
         <h1
