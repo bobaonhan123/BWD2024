@@ -14,7 +14,7 @@ function FindNewWord() {
 
   return (
     <div className="bg-white p-6 rounded-xl w-auto shadow-sm">
-      <h1 className="text-gray-main font-semibold pb-4">
+      <h1 className="text-gray-main font-semibold pb-4 flex text-lg items-center">
         <FontAwesomeIcon icon={faLanguage} className="mr-2" />
         Explore new words
       </h1>
