@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 function Review() {
   return (
     <div className=" bg-white rounded-xl text-gray-normal px-8
-    py-8 flex flex-col justify-between space-y-4 basis-2/5">
+    py-8 flex flex-col justify-between space-y-4 basis-2/5 shadow-md">
       <h1 className="text-gray-main font-semibold text-left
       w-full text-xl">
         <FontAwesomeIcon icon={faBell} className="mr-2" />

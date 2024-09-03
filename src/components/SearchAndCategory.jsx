@@ -10,7 +10,7 @@ export default function SearchAndCategory({ category, setCategory }) {
 
   return (
     <div>
-      <div className="h-11 mx-12 bg-white rounded-full flex justify-start items-center text-[#6C7580] px-10">
+      <div className="h-11 mx-12 bg-white rounded-full flex justify-start items-center text-[#6C7580] px-10 shadow-lg">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
         <input
           type="text"

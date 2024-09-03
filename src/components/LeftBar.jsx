@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
+import { faHouse, faTabletScreenButton } from "@fortawesome/free-solid-svg-icons";
+import { faNoteSticky, faFolder } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useLocation } from "react-router-dom";
 
 function LeftBar() {
+  let location = useLocation();
+
+  const blue = (inp)=> {
+    if (location.pathname.includes(inp)) {
+      return `text-[#4FACFE]`;
+    }
+    return ``;
+  }
   return (
     <div
       className={`fixed
@@ -38,16 +50,31 @@ function LeftBar() {
             shadow-md"
       >
         <Link to="dashboard">
-          <p>Dashboard</p>
+          <p className={`
+          flex items-center justify-center ${blue("dashboard")}`}>
+            <FontAwesomeIcon icon={faHouse} 
+            className="pr-1"/> Dashboard</p>
         </Link>
         <Link to="flashcards">
-          <p>Flashcards</p>
+          <p className={`
+          flex items-center justify-center ${blue("flashcard")}`}>
+            <FontAwesomeIcon icon={faNoteSticky}
+            className="pr-1" />
+            Flashcards</p>
         </Link>
         <Link to="/">
-          <p>Collections</p>
+        
+          <p className="
+          flex items-center justify-center">
+          <FontAwesomeIcon icon={faFolder}
+            className="pr-1"  />
+          Collections</p>
         </Link>
         <Link to="/">
-          <p>Talk with AI</p>
+          <p>
+          <FontAwesomeIcon icon={faTabletScreenButton} 
+          className="pr-1" />
+          Talk with AI</p>
         </Link>
       </div>
       <button

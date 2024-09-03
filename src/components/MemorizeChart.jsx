@@ -1,7 +1,7 @@
 function MemorizeChart() {
     return (
       <div className="flex flex-col text-gray-normal bg-white rounded-xl px-6 
-      py-4 basis-3/5 items-center justify-center">
+      py-4 basis-3/5 items-center justify-center shadow-md">
         <h1 className="text-gray-main 
         text-left font-semibold
         text-xl
