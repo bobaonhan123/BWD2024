@@ -1,7 +1,6 @@
 import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-
+import { Toaster } from 'sonner';
 import Footer from "./components/Footer";
 import MainPage from "./Pages/MainPage";
 import AboutPage from "./Pages/AboutPage";
@@ -36,7 +35,7 @@ function App() {
         {/* remove this before push */}
         <Route path="/learning" element={<LearningPage />} />
       </Routes>
-      <ToastContainer />
+      <Toaster />
       <Footer />
     </div>
   );

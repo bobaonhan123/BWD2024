@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import logo from '../assets/images/google_logo.svg';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../api/userAPI';
-
+import { toast } from 'sonner';
 export default function LoginComponent({ onRegisterClick, option }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -25,15 +23,30 @@ export default function LoginComponent({ onRegisterClick, option }) {
     try {
       const response = await login(email, password);
       localStorage.setItem('token', response.accessToken);
-      if(!response.email) {
+      if (!response.email) {
         throw new Error('Login failed. Please check your email or password.');
       }
-      toast.success('Login successfully!');
-
+      toast.success('Login successfully!', {
+        position: "top-right",
+        autoClose: 2000,
+        style: {
+          color: "green",
+          fontWeight: "bold",
+          textAlign: "center",
+        },
+      });
       navigate('/app');
     } catch (error) {
       console.log(error);
-      toast.error('Login failed. Please check your email or password.');
+      toast.error('Login failed. Please check your email or password.', {
+        position: "top-right",
+        autoClose: 2000,
+        style: {
+          color: "red",
+          fontWeight: "bold",
+          textAlign: "center",
+        },
+      });
     }
   };
   return (
