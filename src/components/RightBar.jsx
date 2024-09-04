@@ -23,6 +23,7 @@ function RightBar() {
           setIsLoggedIn(false);
           return;
         }
+        setIsLoggedIn(true);
         setInfo(response);
         console.log(response);
       } catch (error) {

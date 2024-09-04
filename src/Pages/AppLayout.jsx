@@ -13,7 +13,7 @@ function AppLayout() {
       <Outlet />
       <RightBar />
       <Footer />
-      {isLoggedIn === false && <Protect />}
+      {!isLoggedIn && <Protect />}
     </div>
   );
 }
