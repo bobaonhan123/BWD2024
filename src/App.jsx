@@ -1,6 +1,6 @@
 import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
-import { Toaster } from 'sonner';
+import { Toaster } from "sonner";
 import Footer from "./components/Footer";
 import MainPage from "./Pages/MainPage";
 import AboutPage from "./Pages/AboutPage";
@@ -14,29 +14,31 @@ import CardDetails from "./Pages/CardDetails";
 
 function App() {
   return (
-    <div>
-      <Routes>
-        <Route index element={<MainPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/app" element={<AppLayout />}>
-          <Route index element={<Navigate replace to="dashboard" />} />
-          <Route path="dashboard" element={<DashBoardPage />} />
-          <Route path="flashcards" element={<Flashcard />}>
-            <Route path="create" element={<CreatePage />} />
+    <div className="relative">
+      <div className=" absolute inset-0 bg-[url('src/assets/images/material/ladingbag.png')] bg-cover bg-center filter "></div>
+      <div className="relative z-10">
+        <Routes>
+          <Route index element={<MainPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/app" element={<AppLayout />}>
+            <Route index element={<Navigate replace to="dashboard" />} />
+            <Route path="dashboard" element={<DashBoardPage />} />
+            <Route path="flashcards" element={<Flashcard />}>
+              <Route path="create" element={<CreatePage />} />
+            </Route>
+            <Route path="flashcards/:id" element={<CardDetails />} />
+            <Route
+              path="flashcards/:id/flashcard-learning"
+              element={<LearningPage />}
+            />
           </Route>
-          <Route path="flashcards/:id" element={<CardDetails />} />
-          <Route
-            path="flashcards/:id/flashcard-learning"
-            element={<LearningPage />}
-          />
-        </Route>
 
         {/* remove this before push */}
         <Route path="/learning" element={<LearningPage />} />
       </Routes>
       <Toaster />
-      
+
     </div>
   );
 }
