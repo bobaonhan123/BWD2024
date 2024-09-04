@@ -11,6 +11,7 @@ import DashBoardPage from "./Pages/DashboardPages/DashBoardPage";
 import Flashcard from "./Pages/Flashcard";
 import CreatePage from "./Pages/CreatePage";
 import CardDetails from "./Pages/CardDetails";
+import PricingPage from "./Pages/PricingPage";
 
 function App() {
   return (
@@ -33,8 +34,7 @@ function App() {
               element={<LearningPage />}
             />
           </Route>
-          {/* remove this before push */}
-          <Route path="/learning" element={<LearningPage />} />
+          <Route path="pricing" element={<PricingPage />} />
         </Routes>
         <Toaster />
       </div>
