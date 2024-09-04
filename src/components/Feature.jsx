@@ -10,7 +10,7 @@ const FeatureSection = ({
     <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-16">
       {/* Image Section */}
       {!imageOnRight && (
-        <div className="w-[500px] h-[300px] flex justify-center items-center mb-8 p-4 overflow-hidden rounded-xl">
+        <div className="w-[500px] h-[300px] flex justify-center items-center mb-8 p-4 overflow-hidden rounded-xl shadow-lg">
           <img
             src={`${imageUrl}`}
             alt="Placeholder Image"
@@ -37,7 +37,7 @@ const FeatureSection = ({
 
       {/* Image Section (if image is on the right) */}
       {imageOnRight && (
-        <div className="w-[500px] h-[300px] flex justify-center items-center mb-8 p-4  overflow-hidden rounded-xl">
+        <div className="w-[500px] h-[300px] flex justify-center items-center mb-8 p-4  overflow-hidden rounded-xl shadow-lg">
           <img
             src={`${imageUrl}`}
             alt="Placeholder Image"
