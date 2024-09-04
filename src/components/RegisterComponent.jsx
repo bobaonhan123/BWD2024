@@ -12,6 +12,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
   const [fullname, setFullname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
 
   const handleFullnameChange = (e) => {
     setFullname(e.target.value)
@@ -25,6 +26,10 @@ export default function RegisterComponent({ onLoginClick, option }) {
     setPassword(e.target.value)
   }
 
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value)
+  }
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleRegister()
@@ -33,6 +38,9 @@ export default function RegisterComponent({ onLoginClick, option }) {
 
   const handleRegister = async () => {
     try {
+      if (password !== confirmPassword) {
+        throw new Error('Password and confirm password do not match')
+      }
       const response = await register(fullname, email, password, true)
       console.log(response)
       if (!response.email) {
@@ -53,7 +61,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
       onLoginClick()
     }
     catch (error) {
-      toast.error('Register failed. Please check your email',
+      toast.error(error.message,
         {
           position: "top-right",
           autoClose: 2000,
@@ -84,7 +92,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
         take it easy
       </h1>
       </Link>
-      <p className='text-[#6C7580] text-lg mx-20 mb-10
+      <p className='text-[#6C7580] text-lg mx-20 mb-6
       max-md:text-base'>
         The better way to learn and practice
         new words!
@@ -93,7 +101,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
       mx-14 h-12 rounded-full bg-[#f6f7fb]
       flex items-center justify-center px-10
       placeholder-[#6C7580]
-      max-md:mx-4 mb-4"
+      max-md:mx-4 mb-2"
         placeholder='Your full name' value={fullname}
         onChange={handleFullnameChange}
         onKeyDown={handleKeyDown} />
@@ -102,9 +110,19 @@ export default function RegisterComponent({ onLoginClick, option }) {
       mx-14 h-12 rounded-full bg-[#f6f7fb]
       flex items-center justify-center px-10
       placeholder-[#6C7580]
-      max-md:mx-4 mb-4"
+      max-md:mx-4 mb-2"
         placeholder='Your email' value={email}
         onChange={handleEmailChange}
+        onKeyDown={handleKeyDown} />
+
+      <input className="
+      mx-14 h-12 rounded-full bg-[#f6f7fb]
+      flex items-center justify-center px-10
+      placeholder-[#6C7580] mb-2
+      max-md:mx-4"
+        type='password'
+        placeholder='Your password' value={password}
+        onChange={handlePasswordChange}
         onKeyDown={handleKeyDown} />
 
       <input className="
@@ -113,8 +131,8 @@ export default function RegisterComponent({ onLoginClick, option }) {
       placeholder-[#6C7580]
       max-md:mx-4"
         type='password'
-        placeholder='Your password' value={password}
-        onChange={handlePasswordChange}
+        placeholder='Confirm your password' value={confirmPassword}
+        onChange={handleConfirmPasswordChange}
         onKeyDown={handleKeyDown} />
 
       <button className='mx-14 h-12 
