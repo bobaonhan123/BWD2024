@@ -3,9 +3,9 @@ function PricingCard({ title, price, features, isPopular, gradient }) {
     <div
       className={`flex flex-col items-center ${
         gradient
-          ? "bg-gradient-to-br from-blue-100 via-orange-100 to-purple-100 border-8 border-orange-200"
+          ? "bg-gradient-to-br from-blue-100 via-orange-100 to-purple-100 border-8 border-normal-text border-opacity-30"
           : "bg-slate-100"
-      } p-8 rounded-lg shadow-lg relative max-w-sm`}
+      } p-8 rounded-lg shadow-lg relative max-w-sm text-main-text`}
     >
       {isPopular && (
         <>
@@ -14,7 +14,7 @@ function PricingCard({ title, price, features, isPopular, gradient }) {
             viewBox="0 0 24 24"
             fill="currentColor"
             aria-hidden="true"
-            className="w-20 h-20 absolute -top-11 -left-11 fill-red-400"
+            className="w-20 h-20 absolute -top-11 -left-11 fill-main-blue"
           >
             <path
               fillRule="evenodd"
@@ -22,13 +22,15 @@ function PricingCard({ title, price, features, isPopular, gradient }) {
               clipRule="evenodd"
             />
           </svg>
-          <p className="mono text-sm absolute -top-4 bg-red-400 text-zinc-100 py-0.5 px-2 font-bold tracking-wider rounded">
+          <p className="mono text-sm absolute -top-4 bg-main-blue text-white py-0.5 px-2 font-bold tracking-wider rounded">
             POPULAR
           </p>
         </>
       )}
       <div>
-        <h2 className="font-extrabold text-3xl text-center mb-2">{title}</h2>
+        <h2 className="font-extrabold text-3xl text-center mb-2 text-main-text">
+          {title}
+        </h2>
         <p className="opacity-60 text-center">
           {gradient
             ? "For agencies and businesses"
