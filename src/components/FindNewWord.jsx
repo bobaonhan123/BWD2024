@@ -2,14 +2,14 @@ import { useState } from "react";
 import { faLanguage, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MainButton from "./MainButton";
-// import DictionaryResult from "./DictionaryResult";
+import DictionaryResult from "./DictionaryResult";
 
 function FindNewWord() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [query, setQuerry] = useState("");
 
   const handleSearchClick = () => {
-    setIsExpanded(!isExpanded);
+    setIsExpanded((prev) => !prev);
   };
 
   return (
