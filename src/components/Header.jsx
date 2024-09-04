@@ -78,12 +78,12 @@ function Header() {
           >
             <FontAwesomeIcon icon={faXmark} />
           </div>
-          <a
-            href="#"
+          <Link
+            to="/pricing"
             className="ml-8 text-base text-[#6C7580] max-lg:text-lg max-lg:ml-2 max-lg:my-2"
           >
             Pricing
-          </a>
+          </Link>
           <Link
             to="/about"
             className="ml-8 text-base text-[#6C7580] max-lg:text-lg max-lg:ml-2 max-lg:my-2"
