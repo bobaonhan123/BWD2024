@@ -33,7 +33,6 @@ function App() {
               element={<LearningPage />}
             />
           </Route>
-
           {/* remove this before push */}
           <Route path="/learning" element={<LearningPage />} />
         </Routes>
