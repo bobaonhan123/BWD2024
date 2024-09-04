@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { getUser } from "../api/userAPI"; // Assume logoutUser is a function to handle logout
 import { useNavigate } from "react-router-dom";
+import { useLoginStore } from "../store/store";
 
 function RightBar() {
   const navigate = useNavigate();
@@ -11,18 +12,23 @@ function RightBar() {
     level: 0,
   });
 
+  const setIsLoggedIn = useLoginStore((state) => state.setIsLoggedIn);
+  const isLoggedIn = useLoginStore((state) => state.isLoggedIn);
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await getUser();
         if (!response || !response.fullname) {
-          navigate("/login");
+          // navigate("/login");
+          setIsLoggedIn(false);
+          return;
         }
         setInfo(response);
         console.log(response);
       } catch (error) {
         console.log(error);
-        navigate("/login");
+        // navigate("/login");
+        setIsLoggedIn(false);
       }
     }
     fetchData();
@@ -30,8 +36,12 @@ function RightBar() {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    setIsLoggedIn(false);
     navigate("/login");
   };
+  if(isLoggedIn === false) {
+    return <></>
+  }
 
   return (
     <div className="fixed max-w-96 w-1/5 h-screen right-0 top-0 flex flex-col items-center">
