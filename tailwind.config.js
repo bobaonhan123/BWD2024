@@ -4,10 +4,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-          fontFamily: {
-            sans: ['Poppins', ...defaultTheme.fontFamily.sans],
-            montserrat: ['Montserrat', ...defaultTheme.fontFamily.sans],
-          }
+      fontFamily: {
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        montserrat: ["Montserrat", ...defaultTheme.fontFamily.sans],
+      },
     },
     colors: {
       transparent: "transparent",
@@ -30,6 +30,8 @@ export default {
       "main-start": "#00F2FE",
       "main-end": "#4FACFE",
       border: "#",
+      "red-400": "#f77170",
+      "orange-200": "#f8d8b7",
     },
   },
   plugins: [],
