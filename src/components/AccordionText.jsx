@@ -36,37 +36,53 @@ const data = [
 ];
 
 function AccordionText() {
-    const [openIndex, setOpenIndex] = useState(null);
-    const handleToggle = (index) => {
-      setOpenIndex(openIndex === index ? null : index);
-    };
-  
-    return (
-      <div className="w-full px-4 pt-10 sm:pt-14">
-        <div className="mx-auto w-full max-w-2xl divide-y divide-dark-xs rounded-2xl dark:divide-light-xs sm:bg-primary-light sm:p-10 sm:dark:bg-secondary-dark text-[#4B5563] bg-[#ffffff]">
-          {data.map((item, index) => (
-            <div key={index} className="border-[#f2f2f2]">
-              <button
-                className="flex w-full select-none justify-between py-5 text-left text-lg font-medium outline-none"
-                type="button"
-                onClick={() => handleToggle(index)}
-              >
-                <span>{item.name}</span>
-                <FontAwesomeIcon 
-                  icon={faPlus} 
-                  className={`text-[#4FACFE] transition duration-300 ease-in-out ${openIndex === index ? 'rotate-45' : 'rotate-0'}`} 
-                />
-              </button>
-              <div 
-                className={`transition-all duration-300 ease-in-out overflow-hidden transform ${openIndex === index ? 'max-h-[1000px] scale-100 opacity-100 ' : 'max-h-0 scale-0 opacity-0'}`}
-              >
-                <div className="text-[#4b5563] px-0 pb-4 text-left text-sm">{item.description}</div>
+  const [openIndexes, setOpenIndexes] = useState([]);
+
+  const handleToggle = (index) => {
+    setOpenIndexes(
+      (prevState) =>
+        prevState.includes(index)
+          ? prevState.filter((i) => i !== index) 
+          : [...prevState, index] 
+    );
+  };
+
+  return (
+    <div className="w-full px-4 pt-10 sm:pt-14">
+      <div className="mx-auto w-full max-w-2xl divide-y divide-dark-xs rounded-2xl dark:divide-light-xs sm:bg-primary-light sm:p-10 sm:dark:bg-secondary-dark text-[#4B5563] bg-[#ffffff]">
+        {data.map((item, index) => (
+          <div key={index} className="border-[#f2f2f2]">
+            <button
+              className="flex w-full select-none justify-between py-5 text-left text-lg font-medium outline-none"
+              type="button"
+              onClick={() => handleToggle(index)}>
+              <span>{item.name}</span>
+              <FontAwesomeIcon
+                icon={faPlus}
+                className={`text-[#4FACFE] transition-transform duration-300 ease-in-out ${
+                  openIndexes.includes(index) ? "rotate-45" : "rotate-0"
+                }`}
+              />
+            </button>
+            <div
+              className={`transition-max-height duration-300 ease-in-out overflow-hidden ${
+                openIndexes.includes(index)
+                  ? "max-h-[1000px] scale-100 opacity-100"
+                  : "max-h-0 scale-0 opacity-0"
+              }`}
+              style={{
+                maxHeight: openIndexes.includes(index) ? "1000px" : "0",
+              }} // Inline style for dynamic height
+            >
+              <div className="text-[#4b5563] px-0 pb-4 text-left text-sm">
+                {item.description}
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    );
-  }
-  
-  export default AccordionText;
+    </div>
+  );
+}
+
+export default AccordionText;
