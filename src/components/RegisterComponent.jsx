@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { toast } from 'sonner'
 import { register } from '../api/userAPI'
 
 import logo from '../assets/images/google_logo.svg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
-export default function RegisterComponent({onLoginClick, option}) {
+export default function RegisterComponent({ onLoginClick, option }) {
   const [fullname, setFullname] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -28,16 +27,34 @@ export default function RegisterComponent({onLoginClick, option}) {
 
   const handleRegister = async () => {
     try {
-      const response = await register(fullname, email, password,true) 
+      const response = await register(fullname, email, password, true)
       console.log(response)
-      if(!response.email) {
-        throw new Error('Register failed. Please check your email or password.')
+      if (!response.email) {
+        throw new Error('Register failed. Please check your email or password.', {
+          position: "top-right",
+          autoClose: 2000,
+          style: {
+            color: "green",
+            fontWeight: "bold",
+            textAlign: "center",
+          },
+        })
       }
       toast.success('Register successfully!')
       onLoginClick()
     }
     catch (error) {
-      toast.error('Register failed. Please check your email')
+      toast.error('Register failed. Please check your email',
+        {
+          position: "top-right",
+          autoClose: 2000,
+          style: {
+            color: "red",
+            fontWeight: "bold",
+            textAlign: "center",
+          },
+        }
+      )
       console.log(error)
     }
   }
@@ -60,24 +77,24 @@ export default function RegisterComponent({onLoginClick, option}) {
       </Link>
       <p className='text-[#6C7580] text-lg mx-20 mb-10
       max-md:text-base'>
-      The better way to learn and practice
-      new words!
+        The better way to learn and practice
+        new words!
       </p>
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
       flex items-center justify-center px-10
       placeholder-[#6C7580]
       max-md:mx-4 mb-4"
-        placeholder='Your full name' value={fullname} 
-        onChange={handleFullnameChange}/>
+        placeholder='Your full name' value={fullname}
+        onChange={handleFullnameChange} />
 
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
       flex items-center justify-center px-10
       placeholder-[#6C7580]
       max-md:mx-4 mb-4"
-        placeholder='Your email' value={email} 
-        onChange={handleEmailChange}/>
+        placeholder='Your email' value={email}
+        onChange={handleEmailChange} />
 
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
@@ -86,7 +103,7 @@ export default function RegisterComponent({onLoginClick, option}) {
       max-md:mx-4"
         type='password'
         placeholder='Your password' value={password}
-        onChange={handlePasswordChange}/>
+        onChange={handlePasswordChange} />
 
       <button className='mx-14 h-12 
                     bg-gradient-to-r from-[#00F2FE] from-21%
@@ -95,16 +112,16 @@ export default function RegisterComponent({onLoginClick, option}) {
                     flex items-center rounded-full justify-center
                     text-white
       max-md:mx-4'
-      onClick={handleRegister} >
+        onClick={handleRegister} >
         <p className='text-lg pr-2
-      max-md:mx-4 max-md:text-base' 
-      >
+      max-md:mx-4 max-md:text-base'
+        >
           Register
         </p>
         <FontAwesomeIcon icon={faArrowRight} />
       </button>
       <p className='text-[#6C7580] text-sm mx-4'>
-      Have an Account already? <span className='font-semibold
+        Have an Account already? <span className='font-semibold
                     bg-gradient-to-r from-[#00F2FE] from-21%
                     to-[#4FACFE] bg-clip-text 
                     text-transparent
