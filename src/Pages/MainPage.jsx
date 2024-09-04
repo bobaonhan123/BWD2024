@@ -110,7 +110,7 @@ function MainPage() {
             </p>
           </a>
         </div>
-        <PromoteImage img="../../public/images/promoteimage.jpg"></PromoteImage>
+        <PromoteImage img="images/promoteimage.jpg"></PromoteImage>
         <div className="text-center mt-32">
           <div className="text-center text-2xl font-bold sm:text-5xl">
             <h1
