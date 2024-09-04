@@ -8,3 +8,5 @@ export const server = axios.create({
         'Content-Type': 'application/json',
     }
 })
+
+export const AIServerURL = 'http://103.252.136.203:4000'

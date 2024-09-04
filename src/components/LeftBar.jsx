@@ -70,8 +70,9 @@ function LeftBar() {
             className="pr-1"  />
           Collections</p>
         </Link>
-        <Link to="/">
-          <p>
+        <Link to="ai">
+          <p className={`
+          flex items-center justify-center ${blue("ai")}`}>
           <FontAwesomeIcon icon={faTabletScreenButton} 
           className="pr-1" />
           Talk with AI</p>

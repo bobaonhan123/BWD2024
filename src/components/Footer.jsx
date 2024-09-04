@@ -1,4 +1,14 @@
+import { footerHiddenRoutes } from "../configurations/HiddenComponentConfigurations";
+import { useLocation } from "react-router-dom";
+
 function Footer() {
+  const location = useLocation();
+
+  for (const route of footerHiddenRoutes) {
+    if (location.pathname.includes(route)) {
+      return null;
+    }
+  }
   return (
     <footer
       className="mx-0 my-0

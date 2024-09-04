@@ -12,6 +12,7 @@ import Flashcard from "./Pages/Flashcard";
 import CreatePage from "./Pages/CreatePage";
 import CardDetails from "./Pages/CardDetails";
 import PricingPage from "./Pages/PricingPage";
+import AIPage from "./Pages/AIPage";
 
 function App() {
   return (
@@ -29,11 +30,14 @@ function App() {
               <Route path="create" element={<CreatePage />} />
             </Route>
             <Route path="flashcards/:id" element={<CardDetails />} />
+            
             <Route
               path="flashcards/:id/flashcard-learning"
               element={<LearningPage />}
             />
+            <Route path="ai" element={<AIPage />} />
           </Route>
+          
           <Route path="pricing" element={<PricingPage />} />
         </Routes>
         <Toaster />
