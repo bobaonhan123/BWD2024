@@ -122,30 +122,17 @@ function MainPage() {
           <img className="mx-auto object-contain h-60" src="https://www.vocala.app/_next/image?url=%2Fassets%2Fimages%2Fquote-hero.png&w=640&q=75" />
         </div>
         <div className="p-20">
-          <FeatureSection
-            imageOnRight={false}
-            imageUrl={featureContent[0].imageUrl}
-            imageAlt={featureContent[0].imageAlt}
-            title={featureContent[0].title}
-            subtitle={featureContent[0].subtitle}
-            paragraphs={featureContent[0].paragraphs}
-          />
-          <FeatureSection
-            imageOnRight={true}
-            imageUrl={featureContent[1].imageUrl}
-            imageAlt={featureContent[1].imageAlt}
-            title={featureContent[1].title}
-            subtitle={featureContent[1].subtitle}
-            paragraphs={featureContent[1].paragraphs}
-          />
-          <FeatureSection
-            imageOnRight={false}
-            imageUrl={featureContent[2].imageUrl}
-            imageAlt={featureContent[2].imageAlt}
-            title={featureContent[2].title}
-            subtitle={featureContent[2].subtitle}
-            paragraphs={featureContent[2].paragraphs}
-          />
+          {featureContent.map((feature, index) => (
+            <FeatureSection
+              key={index}
+              imageOnRight={index % 2 === 0}
+              imageUrl={feature.imageUrl}
+              imageAlt={feature.imageAlt}
+              title={feature.title}
+              subtitle={feature.subtitle}
+              paragraphs={feature.paragraphs}
+            />
+          ))}
         </div>
       </div>
     </>
