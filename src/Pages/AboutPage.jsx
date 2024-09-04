@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function AboutPage() {
 
@@ -11,6 +12,7 @@ function AboutPage() {
             <h1 className="text-3xl font-bold underline py-96">
                 Hello
             </h1>
+            <Footer />
         </div>
     )
 }

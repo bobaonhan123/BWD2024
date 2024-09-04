@@ -36,7 +36,7 @@ function App() {
         <Route path="/learning" element={<LearningPage />} />
       </Routes>
       <Toaster />
-      <Footer />
+      
     </div>
   );
 }
