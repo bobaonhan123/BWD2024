@@ -11,11 +11,11 @@ export default function DashBoardPage() {
                             min-h-screen">
                 <div className="flex flex-col space-y-6">
                     <FindNewWord />
-                    <div className="flex flex-row space-x-6 min-w-max ">
+                    <div className="flex flex-row space-x-6">
                         <Review />
                         <MemorizeChart />
                     </div>
-                    <div className="flex flex-row space-x-6 min-w-max ">
+                    <div className="flex flex-row space-x-6 ">
                         <RecentyCreated />
                         <DashboardCalendar />
                     </div>
