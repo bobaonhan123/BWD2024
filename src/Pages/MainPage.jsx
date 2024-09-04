@@ -1,5 +1,6 @@
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FeatureSection from "../components/Feature";
 function MainPage() {
@@ -142,6 +143,7 @@ function MainPage() {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   );
 }

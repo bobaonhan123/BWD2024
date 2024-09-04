@@ -49,6 +49,13 @@ export default function LoginComponent({ onRegisterClick, option }) {
       });
     }
   };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleLogin()
+    }
+  }
+
   return (
     <div
       className={`absolute 
@@ -100,6 +107,7 @@ export default function LoginComponent({ onRegisterClick, option }) {
       placeholder-[#6C7580]
       max-md:mx-4 mb-4"
         placeholder='Your email' value={email}
+        onKeyDown={handleKeyDown}
         onChange={handleEmailChange} />
 
       <input className="
@@ -109,6 +117,7 @@ export default function LoginComponent({ onRegisterClick, option }) {
       max-md:mx-4"
         type='password'
         placeholder='Your password' value={password}
+        onKeyDown={handleKeyDown}
         onChange={handlePasswordChange} />
 
       <button

@@ -34,12 +34,11 @@ function App() {
             />
           </Route>
 
-          {/* remove this before push */}
-          <Route path="/learning" element={<LearningPage />} />
-        </Routes>
-        <Toaster />
-        <Footer />
-      </div>
+        {/* remove this before push */}
+        <Route path="/learning" element={<LearningPage />} />
+      </Routes>
+      <Toaster />
+
     </div>
   );
 }
