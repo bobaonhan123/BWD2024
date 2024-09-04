@@ -25,6 +25,12 @@ export default function RegisterComponent({ onLoginClick, option }) {
     setPassword(e.target.value)
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleRegister()
+    }
+  }
+
   const handleRegister = async () => {
     try {
       const response = await register(fullname, email, password, true)
@@ -40,6 +46,9 @@ export default function RegisterComponent({ onLoginClick, option }) {
           },
         })
       }
+      setFullname('')
+      setEmail('')
+      setPassword('')
       toast.success('Register successfully!')
       onLoginClick()
     }
@@ -86,7 +95,8 @@ export default function RegisterComponent({ onLoginClick, option }) {
       placeholder-[#6C7580]
       max-md:mx-4 mb-4"
         placeholder='Your full name' value={fullname}
-        onChange={handleFullnameChange} />
+        onChange={handleFullnameChange}
+        onKeyDown={handleKeyDown} />
 
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
@@ -94,7 +104,8 @@ export default function RegisterComponent({ onLoginClick, option }) {
       placeholder-[#6C7580]
       max-md:mx-4 mb-4"
         placeholder='Your email' value={email}
-        onChange={handleEmailChange} />
+        onChange={handleEmailChange}
+        onKeyDown={handleKeyDown} />
 
       <input className="
       mx-14 h-12 rounded-full bg-[#f6f7fb]
@@ -103,7 +114,8 @@ export default function RegisterComponent({ onLoginClick, option }) {
       max-md:mx-4"
         type='password'
         placeholder='Your password' value={password}
-        onChange={handlePasswordChange} />
+        onChange={handlePasswordChange}
+        onKeyDown={handleKeyDown} />
 
       <button className='mx-14 h-12 
                     bg-gradient-to-r from-[#00F2FE] from-21%

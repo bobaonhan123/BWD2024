@@ -85,19 +85,19 @@ function Header() {
             Pricing
           </a>
           <Link
-            to="about"
+            to="/about"
             className="ml-8 text-base text-[#6C7580] max-lg:text-lg max-lg:ml-2 max-lg:my-2"
           >
             About us
           </Link>
           <Link
-            to="login"
+            to="/login"
             className="ml-8 text-base text-[#6C7580] max-lg:text-lg max-lg:ml-2 max-lg:my-2"
           >
             Login
           </Link>
           <Link
-            to="app"
+            to="/app"
             className="ml-8 text-base h-10 
                     bg-gradient-to-r from-[#00F2FE] from-21%
                     to-[#4FACFE]
