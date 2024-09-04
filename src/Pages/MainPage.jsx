@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FeatureSection from "../components/Feature";
+import PromoteImage from "../components/PromoteImage";
+import AccordionText from "../components/AccordionText";
 function MainPage() {
   const featureContent = [
     {
@@ -52,15 +54,13 @@ function MainPage() {
             h-28
             max-lg:h-auto
             max-lg:text-5xl
-            "
-            >
+            ">
               Boost your vocabulary
             </p>
             <p
               className="text-[#4B5563] h-24
             max-lg:h-auto
-            max-lg:text-5xl"
-            >
+            max-lg:text-5xl">
               and language skills with us
             </p>
           </h1>
@@ -70,8 +70,7 @@ function MainPage() {
           justify-center
           w-full
           max-lg:flex-col
-          max-lg:items-start"
-          >
+          max-lg:items-start">
             <p className="text-[#6C7580] text-lg mx-4">
               <FontAwesomeIcon
                 icon={faCircleCheck}
@@ -102,24 +101,22 @@ function MainPage() {
           px-10 my-10
           flex items-center rounded-full justify-center
           max-md:px-5
-          max-md:mx-5"
-          >
+          max-md:mx-5">
             <p
               className="text-white font-semibold text-lg
-            max-md:text-base"
-            >
+            max-md:text-base">
               Let’s start explore the magic
             </p>
           </a>
         </div>
+        <PromoteImage img="../../public/images/promoteimage.jpg"></PromoteImage>
         <div className="text-center mt-32">
           <div className="text-center text-2xl font-bold sm:text-5xl">
             <h1
               className="bg-gradient-to-r
             from-[#00F2FE] from-21%
             to-[#4FACFE] bg-clip-text text-transparent mb-4
-            "
-            >
+            ">
               The more that you learn
             </h1>
             <h1 className="text-[#4B5563]">the more places you’ll go.</h1>
@@ -143,6 +140,13 @@ function MainPage() {
           ))}
         </div>
       </div>
+      <div className=" space-y-3 text-center">
+        <p className="text-sm text-main-blue font-semibold">GOT A QUESTION?</p>
+        <h1 className="text-3xl font-semibold text-[#4b5563] sm:text-4xl">
+          Things you might wonder
+        </h1>
+      </div>
+      <AccordionText></AccordionText>
       <Footer />
     </>
   );
