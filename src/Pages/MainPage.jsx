@@ -14,7 +14,8 @@ function MainPage() {
         "Imagine reading a book or watching a movie and coming across some cool new words that you want to add to your vocabulary. Or perhaps you already have a long list of words that you need to memorize.",
         "🏆 We offer a personalized approach to word creation based on your interests and needs, helping you save time and stay focused on your goals.",
       ],
-      imageUrl: "https://via.placeholder.com/500x300.png?text=Create+New+Words",
+      imageUrl:
+        "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.15752-9/458084040_499261036155988_381838654889462165_n.png?_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGdJoQnbKIe9fJ2Q5hZYNeaLpv1GirqhKcum_UaKuqEp48yV7eyFvZbp1YHPK0tP1MAZqIQf_MwadiQYly9MocV&_nc_ohc=c8nRKJS10fsQ7kNvgFs8_WK&_nc_ht=scontent.fdad1-1.fna&oh=03_Q7cD1QHouBp8n1MLta-85N8sZWgN0zhM6ScyA9zu4890eYNnCg&oe=66FFFE0D",
       imageAlt: "Image representing word creation",
     },
     {
@@ -25,7 +26,7 @@ function MainPage() {
         "📈 Use our tracking tools to monitor your progress over time and stay motivated as you improve your vocabulary.",
       ],
       imageUrl:
-        "https://via.placeholder.com/500x300.png?text=Track+Your+Progress",
+        "https://scontent.fdad1-3.fna.fbcdn.net/v/t1.15752-9/457804712_864755768917523_256416563780535443_n.png?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeGn9Suxl8RHrmv8o37CZaf346MEfsmD3GHjowR-yYPcYRYVD9vySj77wgxPWLq4RmWoIEQUpMC9I_i7tTapfMQj&_nc_ohc=BHqxdAgqceQQ7kNvgFtKygq&_nc_ht=scontent.fdad1-3.fna&oh=03_Q7cD1QHMIJil5OxuCrr2M0SiqWcbf_xGkx4AnNl1UeSNXHRaLA&oe=66FFE698",
       imageAlt: "Image representing progress tracking",
     },
     {
@@ -36,7 +37,7 @@ function MainPage() {
         "🤝 Engage in discussions, share tips, and motivate each other as you work towards your language learning goals.",
       ],
       imageUrl:
-        "https://via.placeholder.com/500x300.png?text=Engage+with+the+Community",
+        "https://scontent.fdad1-1.fna.fbcdn.net/v/t1.15752-9/456820373_1641337176435049_9191306335950127392_n.png?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHMor0L6mDOKhZWfdQkLiACtZG0t70NVWO1kbS3vQ1VY56DM_w-4mP60Zcgs1vBFL9HmzJ-C93K_jfQuRJoF8KE&_nc_ohc=uSGOO0m4W_MQ7kNvgFU-lVs&_nc_ht=scontent.fdad1-1.fna&oh=03_Q7cD1QHeh-LgHTeBL5ehuoxo6YXiiCQN_r7c9GNTjSKEIi13OQ&oe=66FFFA97",
       imageAlt: "Image representing community engagement",
     },
   ];

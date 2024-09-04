@@ -29,6 +29,7 @@ export default {
       background: "#f6f7fb",
       "main-start": "#00F2FE",
       "main-end": "#4FACFE",
+      border: "#",
       "red-400": "#f77170",
       "orange-200": "#f8d8b7",
     },
