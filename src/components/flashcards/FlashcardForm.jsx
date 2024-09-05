@@ -7,7 +7,7 @@ import { useDisclosure } from "../../hooks/common/use-disclosure";
 import Modal from "../common/Modal";
 import ImportModalContent from "./ImportModalContent";
 import { createFlashcardSet } from "../../api/flashcardAPI"; // Import the API service
-
+import { toast } from "sonner";
 function FlashcardForm() {
   const [flashcards, setFlashcards] = useState([]);
   const [title, setTitle] = useState("");
@@ -47,7 +47,27 @@ function FlashcardForm() {
 
     try {
       const response = await createFlashcardSet(flashcardSet);
-      console.log('Flashcard set created:', response);
+      if (response.status === 201) {
+        toast.success('Create flashcard set successfully!', {
+          position: "top-right",
+          autoClose: 2000,
+          style: {
+            color: "green",
+            fontWeight: "bold",
+            textAlign: "center",
+          },
+        });
+      } else {
+        toast.error('Something went wrong!', {
+          position: "top-right",
+          autoClose: 2000,
+          style: {
+            color: "red",
+            fontWeight: "bold",
+            textAlign: "center",
+          },
+        });
+      }
     } catch (error) {
       console.error('Error creating flashcard set:', error);
     }
