@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import FeatureSection from "../components/Feature";
 import PromoteImage from "../components/PromoteImage";
 import AccordionText from "../components/AccordionText";
+import LandingPanel from "../components/LandingPanel";
 function MainPage() {
   const featureContent = [
     {
@@ -148,6 +149,7 @@ function MainPage() {
         </h1>
       </div>
       <AccordionText></AccordionText>
+      <LandingPanel></LandingPanel>
       <Footer />
     </>
   );
