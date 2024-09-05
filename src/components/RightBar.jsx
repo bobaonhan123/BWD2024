@@ -22,6 +22,7 @@ function RightBar() {
         if (!response || !response.fullname) {
           // navigate("/login");
           setIsLoggedIn(false);
+          localStorage.removeItem("token");
           return;
         }
         setIsLoggedIn(true);
@@ -31,6 +32,7 @@ function RightBar() {
         console.log(error);
         // navigate("/login");
         setIsLoggedIn(false);
+        localStorage.removeItem("token");
       }
     }
     fetchData();
