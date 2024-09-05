@@ -81,10 +81,10 @@ function LeftBar() {
         </Link>
         <Link to="correction">
           <p
-            className="
-          flex items-center justify-center"
+            className={`${blue("correction")}
+          flex items-center justify-center`}
           >
-            <FontAwesomeIcon icon={faFolder} className="pr-1 mr-3" />
+            <FontAwesomeIcon icon={faFolder} className={`pr-1 mr-3 `} />
             Correction
           </p>
         </Link>
