@@ -67,9 +67,6 @@ function FlashcardForm() {
 
     try {
       const response = await createFlashcardSet(flashcardSet);
-
-      console.log("Flashcard set created:", response);
-
       if (response.status === 201) {
         toast.success('Create flashcard set successfully!', {
           position: "top-right",
