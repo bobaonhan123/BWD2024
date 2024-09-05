@@ -83,10 +83,7 @@ const ChatBox = ({ onClose }) => {
           </p>
         </div>
         <button className="chat-box-close" onClick={onClose}>
-          <FontAwesomeIcon
-            icon={faX}
-            className="text-white w-6"
-          />
+          <FontAwesomeIcon icon={faX} className="text-white w-6" />
         </button>
       </div>
       <div className="chat-box-messages">
@@ -113,7 +110,11 @@ const ChatBox = ({ onClose }) => {
           placeholder="Type a message..."
           disabled={waitingForReply}
         />
-        <button onClick={handleSendMessage} disabled={waitingForReply}>
+        <button
+          className="bg-gradient-to-r from-[#4FACFE]
+       to-[#00F2FE] from-21%"
+          onClick={handleSendMessage}
+          disabled={waitingForReply}>
           <FontAwesomeIcon icon={faPaperPlane} className="text-white w-6" />
         </button>
       </div>
