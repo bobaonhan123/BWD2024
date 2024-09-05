@@ -2,8 +2,12 @@ import { faImage } from "@fortawesome/free-regular-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function CardCreateForm({ index, flashcard, onDelete }) {
+function CardCreateForm({ index, flashcard, onDelete, onUpdate }) {
   const { id, term, meaning } = flashcard; // Lấy ID, term và meaning từ flashcard
+
+  const handleChange = (field, value) => {
+    onUpdate(id, field, value);
+  };
 
   return (
     <div className="bg-white shadow-sm mb-4 rounded-md">
@@ -21,13 +25,15 @@ function CardCreateForm({ index, flashcard, onDelete }) {
           <textarea
             type="text"
             placeholder="Term"
-            defaultValue={term}
+            value={term}
+            onChange={(e) => handleChange("term", e.target.value)}
             className="w-1/2 p-2 border-b-4 border-main-blue rounded-md col-span-1 focus:border-normal-text focus:outline-none"
           />
           <textarea
             type="text"
             placeholder="Meaning"
-            defaultValue={meaning}
+            value={meaning}
+            onChange={(e) => handleChange("meaning", e.target.value)}
             className="w-1/2 border-b-4 border-main-blue p-2 rounded-md col-span-1 focus:border-normal-text focus:outline-none"
           />
         </div>
