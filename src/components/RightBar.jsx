@@ -61,7 +61,7 @@ function RightBar() {
     hover:opacity-100`}>
       <div className="flex flex-col items-center mt-28 bg-white w-5/6 rounded-3xl relative pt-10 shadow-md">
         <img
-          src="https://variety.com/wp-content/uploads/2023/12/MCDAVTH_WD032.jpg"
+          src="/images/avatar.png"
           alt="avt"
           className="w-24 h-24 absolute rounded-full top-[-4.5rem] z-50 object-cover border-4 border-white"
         />
