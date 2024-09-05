@@ -110,8 +110,6 @@ function FlashcardForm() {
       // Gọi API để tạo nội dung AI cho flashcards
       let aiGeneratedContent = await generateContent(promt);
 
-      console.log(aiGeneratedContent); // Xác nhận dữ liệu đầu vào là mảng
-
       aiGeneratedContent = aiGeneratedContent
         .replace(/```json/g, "")
         .replace(/```/g, "")
@@ -119,8 +117,6 @@ function FlashcardForm() {
       // Chuyển đổi chuỗi JSON thành mảng đối tượng
       const parsedContent = await JSON.parse(aiGeneratedContent);
 
-      console.log(parsedContent); // Kiểm tra dữ liệu đã được chuyển đổi thành mảng
-      // Sử dụng map để chuyển đổi mảng từ vựng thành flashcards
       const generatedFlashcards = parsedContent.map((item) => ({
         id: uuidv4(), // Tạo ID duy nhất cho mỗi flashcard mới
         term: item.word, // Từ vựng từ parsedContent
@@ -133,8 +129,6 @@ function FlashcardForm() {
       }));
 
       setFlashcards([...flashcards, ...generatedFlashcards]);
-
-      console.log("AI generated flashcards:", generatedFlashcards);
     } catch (error) {
       console.error("Error generating flashcards with AI:", error);
     } finally {
