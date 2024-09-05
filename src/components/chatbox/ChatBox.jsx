@@ -1,6 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import "./ChatBox.css";
 import { generateContent } from "../../api/geminiAPI";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFly } from "@fortawesome/free-brands-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 
 const ChatBox = ({ onClose }) => {
   const [message, setMessage] = useState("");
@@ -65,9 +69,24 @@ const ChatBox = ({ onClose }) => {
 
   return (
     <div className="chat-box">
-      <div className="chat-box-close-container">
+      <div
+        className="chat-box-close-container bg-gradient-to-r from-[#4FACFE]
+       to-[#00F2FE] from-21%
+        ">
+        <div className="chat-box-close-bot">
+          <p
+            className="text-white 
+        text-left font-semibold
+        text-xl
+        w-full my-4">
+            AI chat box
+          </p>
+        </div>
         <button className="chat-box-close" onClick={onClose}>
-          ✕
+          <FontAwesomeIcon
+            icon={faX}
+            className="text-white w-6"
+          />
         </button>
       </div>
       <div className="chat-box-messages">
@@ -95,7 +114,7 @@ const ChatBox = ({ onClose }) => {
           disabled={waitingForReply}
         />
         <button onClick={handleSendMessage} disabled={waitingForReply}>
-          Send
+          <FontAwesomeIcon icon={faPaperPlane} className="text-white w-6" />
         </button>
       </div>
     </div>
