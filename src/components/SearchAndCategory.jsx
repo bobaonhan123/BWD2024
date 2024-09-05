@@ -6,7 +6,8 @@ import { useState } from "react";
 export default function SearchAndCategory({
   category,
   setCategory,
-  onCategoryChange,
+  searchText,
+  setSearchText
 }) {
   const [activeTab, setActiveTab] = useState(category);
 
@@ -14,9 +15,10 @@ export default function SearchAndCategory({
     const newCategory = e.target.id;
     setCategory(newCategory);
     setActiveTab(newCategory);
-    if (onCategoryChange) {
-      onCategoryChange(newCategory);
-    }
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchText(e.target.value);
   };
 
   return (
@@ -25,6 +27,8 @@ export default function SearchAndCategory({
         <FontAwesomeIcon icon={faMagnifyingGlass} />
         <input
           type="text"
+          value={searchText}
+          onChange={handleSearchChange}
           className="w-full h-full bg-transparent outline-none px-4"
           placeholder="Find it faster with a search"
         />
