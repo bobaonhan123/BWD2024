@@ -6,7 +6,7 @@ export default function Correction() {
     const [content, setContent] = useState("")
     const handleClick = async () => {
         const res = await generateContent("how are yu")
-        setContent(res.data.content)
+        setContent(res)
     }
     console.log("env:",import.meta.env.VITE_GEMINI_API_KEY)
     return (
