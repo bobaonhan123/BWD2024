@@ -10,7 +10,7 @@ function LandingPanel() {
             <div className="transition-all hover:scale-105">
               <a
                 className=" rounded-full bg-white py-3 px-6 text-base font-semibold text-main-blue "
-                href="/dashboard">
+                href="/app/dashboard">
                 Let's started
               </a>
             </div>
