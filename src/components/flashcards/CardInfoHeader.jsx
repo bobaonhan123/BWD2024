@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function CardInfoHeader() {
   return (
-    <div className="p-5 bg-white rounded-2xl w-1/2 shadow-md">
+    <div className="p-5 bg-white rounded-2xl w-2/3 shadow-md">
       <div className="flex flex-col items-start space-y-4">
         <h1 className="text-xl font-semibold text-main-text">
           Cambridge Vocabulary for IELTS (20 units)

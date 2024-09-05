@@ -58,7 +58,7 @@ export const getDetailCardSet = async (id) => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error getting detail flashcard set:", error);
+    // console.error("Error getting detail flashcard set:", error);
     throw error;
   }
 };
