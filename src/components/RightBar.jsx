@@ -27,9 +27,9 @@ function RightBar() {
         }
         setIsLoggedIn(true);
         setInfo(response);
-        console.log(response);
+        // console.log(response);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         // navigate("/login");
         setIsLoggedIn(false);
         localStorage.removeItem("token");

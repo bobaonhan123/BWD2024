@@ -10,7 +10,7 @@ export const createFlashcardSet = async (flashcardSet) => {
       },
     });
   } catch (error) {
-    console.error("Error creating flashcard set:", error);
+    // console.error("Error creating flashcard set:", error);
     throw error;
   }
 };
@@ -26,7 +26,7 @@ export const getUserFlashcardSet = async () => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error getting flashcard set:", error);
+    // console.error("Error getting flashcard set:", error);
     throw error;
   }
 };
@@ -42,7 +42,7 @@ export const getGlobalFlashcardSet = async () => {
     });
     return response.data;
   } catch (error) {
-    console.error("Error getting flashcard set:", error);
+    // console.error("Error getting flashcard set:", error);
     throw error;
   }
 

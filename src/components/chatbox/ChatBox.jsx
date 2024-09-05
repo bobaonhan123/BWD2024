@@ -55,10 +55,10 @@ const ChatBox = ({ onClose }) => {
         basic to advanced, with clarity, accuracy, and enthusiasm. When responding, make sure to use
          clear language, answer student short like quick respone. So, respond to this student question: ${question}.`;
       const aiGeneratedContent = await generateContent(promt);
-      console.log(aiGeneratedContent);
+      // console.log(aiGeneratedContent);
       return aiGeneratedContent;
     } catch (error) {
-      console.error("Error generating response with AI:", error);
+      // console.error("Error generating response with AI:", error);
       return "Error generating response";
     }
   };
