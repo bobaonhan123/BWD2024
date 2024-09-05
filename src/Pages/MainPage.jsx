@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import FeatureSection from "../components/Feature";
 import PromoteImage from "../components/PromoteImage";
 import AccordionText from "../components/AccordionText";
+import LandingPanel from "../components/LandingPanel";
 function MainPage() {
   const featureContent = [
     {
@@ -110,7 +111,7 @@ function MainPage() {
             </p>
           </a>
         </div>
-        <PromoteImage img="images/promoteimage.jpg"></PromoteImage>
+        <PromoteImage img="https://scontent.xx.fbcdn.net/v/t1.15752-9/456864062_484195677864395_8942584632118598915_n.png?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGcrVQCu8qJrTTd-HT6cvUxhxy9u2dvBeWHHL27Z28F5Qx5LY6QhYghkJpEdjW2t_xTnZRLOBNCjprVJQ4kkywW&_nc_ohc=bnfhCUbl2IoQ7kNvgHj1zh2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_gid=AzY5bBOdUEmhEeN7-0f3PyO&oh=03_Q7cD1QFUubkztqfBOmoG3AkY9X44yNsuSTS7RwvcnSifSPS-6A&oe=67008A2C"></PromoteImage>
         <div className="text-center mt-32">
           <div className="text-center text-2xl font-bold sm:text-5xl">
             <h1
@@ -148,6 +149,7 @@ function MainPage() {
         </h1>
       </div>
       <AccordionText></AccordionText>
+      <LandingPanel></LandingPanel>
       <Footer />
     </>
   );

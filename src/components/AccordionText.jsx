@@ -6,7 +6,7 @@ const data = [
   {
     name: "Introduction",
     description:
-      "Vocala is a vocabulary learning platform that helps you learn and memorize new words in a better way. It also offers advanced AI features to enhance your learning experience and allows you to create customized word lists tailored to your interests and needs.",
+      "Takeiteasy is a vocabulary learning platform that helps you learn and memorize new words in a better way. It also offers advanced AI features to enhance your learning experience and allows you to create customized word lists tailored to your interests and needs.",
   },
   {
     name: "Usage Steps",
@@ -16,7 +16,7 @@ const data = [
   {
     name: "Platform Compatibility",
     description:
-      "Although Vocala is primarily designed for desktop usage, some features are still available on mobile and tablet browsers. For the best experience, we recommend accessing Vocala through a desktop browser. However, we are planning to release a dedicated mobile version in the future.",
+      "Although Takeiteasy is primarily designed for desktop usage, some features are still available on mobile and tablet browsers. For the best experience, we recommend accessing Vocala through a desktop browser. However, we are planning to release a dedicated mobile version in the future.",
   },
   {
     name: "Language Learning Recommendation",
@@ -31,7 +31,7 @@ const data = [
   {
     name: "Feature Requests",
     description:
-      "You sure can! You can easily request a feature by using the feedback box on the app or by sending an email to vocala.hq@gmail.com. We would love to hear from you!",
+      "You sure can! You can easily request a feature by using the feedback box on the app or by sending an email to takeiteasy@gmail.com. We would love to hear from you!",
   },
 ];
 
@@ -39,11 +39,10 @@ function AccordionText() {
   const [openIndexes, setOpenIndexes] = useState([]);
 
   const handleToggle = (index) => {
-    setOpenIndexes(
-      (prevState) =>
-        prevState.includes(index)
-          ? prevState.filter((i) => i !== index) 
-          : [...prevState, index] 
+    setOpenIndexes((prevState) =>
+      prevState.includes(index)
+        ? prevState.filter((i) => i !== index)
+        : [...prevState, index]
     );
   };
 
