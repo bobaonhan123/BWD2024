@@ -29,10 +29,12 @@ export default function Correction() {
             className="p-4 py-2
              m-2 text-white rounded-full bg-gradient-to-r
             from-[#00F2FE] from-21%
-            to-[#4FACFE]">Correct grammar</button>
+            to-[#4FACFE]">Ask ChatGPT</button>
             <textarea className="w-full h-2/5
             p-4 rounded-3xl shadow-lg" value={content}
-            onChange={handleContentChange}></textarea>
+            // onChange={handleContentChange}
+            >
+            </textarea>
         </div>
     )
 }
