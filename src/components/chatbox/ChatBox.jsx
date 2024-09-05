@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./ChatBox.css";
+import { generateContent } from "../../api/geminiAPI";
 
 const ChatBox = ({ onClose }) => {
   const [message, setMessage] = useState("");
@@ -7,7 +8,7 @@ const ChatBox = ({ onClose }) => {
   const [waitingForReply, setWaitingForReply] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (message.trim()) {
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -15,21 +16,23 @@ const ChatBox = ({ onClose }) => {
       ]);
       setMessage("");
       setWaitingForReply(true);
-    }
-  };
 
-  useEffect(() => {
-    if (waitingForReply) {
-      const timer = setTimeout(() => {
+      try {
+        const response = await handleAiGen(message);
         setMessages((prevMessages) => [
           ...prevMessages,
-          { text: "This is an automatic reply", sender: "Receiver" },
+          { text: response, sender: "Receiver" },
         ]);
+      } catch (error) {
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: "Error generating response", sender: "Receiver" },
+        ]);
+      } finally {
         setWaitingForReply(false);
-      }, 2000);
-      return () => clearTimeout(timer);
+      }
     }
-  }, [waitingForReply]);
+  };
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -39,6 +42,24 @@ const ChatBox = ({ onClose }) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
+    }
+  };
+
+  const handleAiGen = async (question) => {
+    try {
+      const promt = `You are an experienced English teacher with expertise in grammar, 
+      vocabulary, pronunciation, and communication skills. You are skilled at explaining
+       grammar rules in an understandable way and providing specific examples to illustrate 
+       them. You can also help students improve their writing and speaking abilities by offering 
+       detailed feedback and guidance. Answer students' questions on all aspects of English, from
+        basic to advanced, with clarity, accuracy, and enthusiasm. When responding, make sure to use
+         clear language, answer student short like quick respone. So, respond to this student question: ${question}.`;
+      const aiGeneratedContent = await generateContent(promt);
+      console.log(aiGeneratedContent);
+      return aiGeneratedContent;
+    } catch (error) {
+      console.error("Error generating response with AI:", error);
+      return "Error generating response";
     }
   };
 
@@ -71,12 +92,9 @@ const ChatBox = ({ onClose }) => {
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type a message..."
-          disabled={waitingForReply} 
+          disabled={waitingForReply}
         />
-        <button
-          onClick={handleSendMessage}
-          disabled={waitingForReply} 
-        >
+        <button onClick={handleSendMessage} disabled={waitingForReply}>
           Send
         </button>
       </div>
