@@ -7,7 +7,11 @@ import { useDisclosure } from "../../hooks/common/use-disclosure";
 import Modal from "../common/Modal";
 import ImportModalContent from "./ImportModalContent";
 import { createFlashcardSet } from "../../api/flashcardAPI"; // Import the API service
+
 import { generateContent } from "../../api/geminiAPI";
+
+
+import { toast } from "sonner";
 
 function FlashcardForm() {
   const [flashcards, setFlashcards] = useState([]);
@@ -33,6 +37,19 @@ function FlashcardForm() {
   };
 
   const handleCreateSet = async () => {
+    if (!title.trim() || !description.trim() || flashcards.length === 0) {
+      toast.error('Please fill in all fields and add at least one flashcard.', {
+        position: "top-right",
+        autoClose: 2000,
+        style: {
+          color: "red",
+          fontWeight: "bold",
+          textAlign: "center",
+        },
+      });
+      return;
+    }
+
     const flashcardSet = {
       title,
       description,
@@ -50,7 +67,34 @@ function FlashcardForm() {
 
     try {
       const response = await createFlashcardSet(flashcardSet);
+
       console.log("Flashcard set created:", response);
+
+      if (response.status === 201) {
+        toast.success('Create flashcard set successfully!', {
+          position: "top-right",
+          autoClose: 2000,
+          style: {
+            color: "green",
+            fontWeight: "bold",
+            textAlign: "center",
+          },
+        });
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      } else {
+        toast.error('Something went wrong!', {
+          position: "top-right",
+          autoClose: 2000,
+          style: {
+            color: "red",
+            fontWeight: "bold",
+            textAlign: "center",
+          },
+        });
+      }
+
     } catch (error) {
       console.error("Error creating flashcard set:", error);
     }

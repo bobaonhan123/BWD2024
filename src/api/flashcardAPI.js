@@ -1,5 +1,6 @@
 import { server } from "../configurations/AxiosConfigurations";
 export const createFlashcardSet = async (flashcardSet) => {
+
   try {
     const token = localStorage.getItem("token");
     console.log(token);
@@ -45,4 +46,5 @@ export const getGlobalFlashcardSet = async () => {
     console.error("Error getting flashcard set:", error);
     throw error;
   }
+
 };
