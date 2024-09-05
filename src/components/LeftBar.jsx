@@ -56,7 +56,7 @@ function LeftBar() {
             bg-white
             rounded-3xl
             py-6
-            h-56
+            h-64
             flex flex-col
             justify-evenly
             text-[#6C7580]
