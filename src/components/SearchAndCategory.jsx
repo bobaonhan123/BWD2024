@@ -45,7 +45,7 @@ export default function SearchAndCategory({ category, setCategory }) {
           ))}
         </div>
         <Link
-          to="create"
+          to="/app/flashcards/create"
           className="
             flex items-center
             justify-center
