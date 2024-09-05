@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { generateContent } from "../../api/geminiAPI";
 import { ClipLoader } from "react-spinners"; // Import the spinner
+import FloatingButton from "../../components/chatbox/FloatingButton";
 
 export default function Correction() {
   const [input, setInput] = useState("");
@@ -48,6 +49,7 @@ export default function Correction() {
         value={content}
         readOnly
       ></textarea>
+            <FloatingButton></FloatingButton>
     </div>
   );
 }

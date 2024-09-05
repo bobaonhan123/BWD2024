@@ -24,7 +24,7 @@ export default {
       "normal-text": "#6C7580",
       "main-text": "#4B5563",
       "second-blue": "#00F2FE",
-      "gray-main": "#4b5563",
+      "gray-main": "#4b5563" ,
       "gray-normal": "#6c7580",
       background: "#f6f7fb",
       "main-start": "#00F2FE",
