@@ -25,7 +25,7 @@ export default function CardSet({ data }) {
           <div className="flex flex-col items-start">
             <h1 className="text-base text-left">{data.title}</h1>
             <div className="flex text-sm text-[#6C7580] mt-2">
-              <p className="">{data.words_number} words</p>
+              <p className="">{data.vocabularies.length} words</p>
               <p className="ml-4">
                 <FontAwesomeIcon icon={faUsers} /> {data.members}
               </p>
@@ -37,7 +37,7 @@ export default function CardSet({ data }) {
           >
             <p className="text-sm flex items-center">
               <img
-                src={data.avatar}
+                src="https://scontent.fdad1-3.fna.fbcdn.net/v/t1.15752-9/456681963_527391563105988_5779884790602890748_n.png?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=gbnpLui0-HwQ7kNvgFb5BLz&_nc_ht=scontent.fdad1-3.fna&oh=03_Q7cD1QFn66Q5Z4AhXEecjxWRFHbenGGy1VQulJKSNMypLAxEZw&oe=67013A35"
                 alt="avt"
                 className="
               h-10 w-fit"

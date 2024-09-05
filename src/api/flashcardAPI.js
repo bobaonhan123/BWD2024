@@ -45,5 +45,20 @@ export const getGlobalFlashcardSet = async () => {
     // console.error("Error getting flashcard set:", error);
     throw error;
   }
+};
 
+export const getDetailCardSet = async (id) => {
+  try {
+    const token = localStorage.getItem("token");
+
+    const response = await server.get(`/flashcard/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error getting detail flashcard set:", error);
+    throw error;
+  }
 };
