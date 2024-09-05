@@ -30,6 +30,19 @@ function FlashcardForm() {
   };
 
   const handleCreateSet = async () => {
+    if (!title.trim() || !description.trim() || flashcards.length === 0) {
+      toast.error('Please fill in all fields and add at least one flashcard.', {
+        position: "top-right",
+        autoClose: 2000,
+        style: {
+          color: "red",
+          fontWeight: "bold",
+          textAlign: "center",
+        },
+      });
+      return;
+    }
+
     const flashcardSet = {
       title,
       description,
@@ -57,6 +70,9 @@ function FlashcardForm() {
             textAlign: "center",
           },
         });
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       } else {
         toast.error('Something went wrong!', {
           position: "top-right",
