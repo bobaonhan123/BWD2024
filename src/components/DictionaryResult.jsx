@@ -94,12 +94,13 @@ import {
   
           {definitions.map((def, index) => (
             <div key={index}>
-              <div className="flex items-center">
+              <div className="flex items-center justify-start text-left">
                 <FontAwesomeIcon icon={faStar} className="mx-3" />
                 <p className="font-semibold">{def.definition}</p>
               </div>
               {def.example && (
-                <p className="font-light italic mx-3">{def.example}</p>
+                <p className="font-light italic mx-3
+                text-left ml-10">{def.example}</p>
               )}
             </div>
           ))}
