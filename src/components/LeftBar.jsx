@@ -16,6 +16,14 @@ function LeftBar() {
     }
     return ``;
   };
+
+  const lowOpacity = (inp) => {
+    if (location.pathname.includes(inp)) {
+      return `opacity-40`;
+    }
+    return ``;
+  }
+
   return (
     <div
       className={`fixed
@@ -26,6 +34,8 @@ function LeftBar() {
         flex-col
         items-center
         left-[1%]
+        ${lowOpacity("ai")}
+        hover:opacity-100
         `}
     >
       <div className="flex items-center">

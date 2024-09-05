@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getUser } from "../api/userAPI"; // Assume logoutUser is a function to handle logout
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useLoginStore } from "../store/store";
 
 function RightBar() {
+  const location = useLocation();
   const navigate = useNavigate();
   const [info, setInfo] = useState({
     name: "",
@@ -44,8 +45,18 @@ function RightBar() {
     return <></>
   }
 
+  const lowOpacity = (inp) => {
+    if (location.pathname.includes(inp)) {
+      return `opacity-40`;
+    }
+    return ``;
+  }
+
   return (
-    <div className="fixed max-w-96 w-1/5 h-screen right-0 top-0 flex flex-col items-center">
+    <div className={`fixed max-w-96 w-1/5 h-screen right-0 top-0 
+    flex flex-col items-center
+    ${lowOpacity("ai")}
+    hover:opacity-100`}>
       <div className="flex flex-col items-center mt-28 bg-white w-5/6 rounded-3xl relative pt-10 shadow-md">
         <img
           src="https://variety.com/wp-content/uploads/2023/12/MCDAVTH_WD032.jpg"
