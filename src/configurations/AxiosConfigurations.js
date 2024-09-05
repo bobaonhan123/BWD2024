@@ -12,3 +12,10 @@ export const server = axios.create({
 export const AIServerURL = 'http://103.252.136.203:4000'
 
 export const GeminiServerURL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${import.meta.env.VITE_GEMINI_API_KEY}`
+
+export const geminiServer = axios.create({
+    baseURL: GeminiServerURL,
+    headers: {
+        'Content-Type': 'application/json',
+    }
+})
