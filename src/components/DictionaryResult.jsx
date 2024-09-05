@@ -72,7 +72,17 @@ import {
     const definitions = data[0].meanings[0].definitions;
   
     console.log(definitions);
-  
+
+
+  //text to speech
+
+  const handleSpeed = (word) => {
+    let utterance = new SpeechSynthesisUtterance(word);
+    window.speechSynthesis.speak(utterance);
+    console.log(word);
+
+  };
+
     return (
       <div className="transition-max-height duration-500 ease-in-out text-gray-main ">
         <hr className="my-5" />
@@ -87,10 +97,12 @@ import {
             <FontAwesomeIcon icon={faCircle} className="size-3  mx-3" />
             <p>{partOfSpeech}</p>
           </div>
-          <div className="flex items-center text-gray-normal">
-            <FontAwesomeIcon icon={faVolumeHigh} className="mx-3" />
-            <p>{phonetics}</p>
-          </div>
+        <button
+          className="flex items-center text-gray-normal"
+          onClick={() => handleSpeed(word)}>
+          <FontAwesomeIcon icon={faVolumeHigh} className="mx-3" />
+          <p>{phonetics}</p>
+        </button>
   
           {definitions.map((def, index) => (
             <div key={index}>
