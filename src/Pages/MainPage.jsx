@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FeatureSection from "../components/Feature";
+import PromoteImage from "../components/PromoteImage";
+import AccordionText from "../components/AccordionText";
+import LandingPanel from "../components/LandingPanel";
 function MainPage() {
   const featureContent = [
     {
@@ -53,15 +56,13 @@ function MainPage() {
             h-28
             max-lg:h-auto
             max-lg:text-5xl
-            "
-            >
+            ">
               Boost your vocabulary
             </p>
             <p
               className="text-[#4B5563] h-24
             max-lg:h-auto
-            max-lg:text-5xl"
-            >
+            max-lg:text-5xl">
               and language skills with us
             </p>
           </h1>
@@ -71,8 +72,7 @@ function MainPage() {
           justify-center
           w-full
           max-lg:flex-col
-          max-lg:items-start"
-          >
+          max-lg:items-start">
             <p className="text-[#6C7580] text-lg mx-4">
               <FontAwesomeIcon
                 icon={faCircleCheck}
@@ -103,24 +103,22 @@ function MainPage() {
           px-10 my-10
           flex items-center rounded-full justify-center
           max-md:px-5
-          max-md:mx-5"
-          >
+          max-md:mx-5">
             <p
               className="text-white font-semibold text-lg
-            max-md:text-base"
-            >
+            max-md:text-base">
               Let’s start explore the magic
             </p>
           </a>
         </div>
+        <PromoteImage img="https://scontent.xx.fbcdn.net/v/t1.15752-9/456864062_484195677864395_8942584632118598915_n.png?_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGcrVQCu8qJrTTd-HT6cvUxhxy9u2dvBeWHHL27Z28F5Qx5LY6QhYghkJpEdjW2t_xTnZRLOBNCjprVJQ4kkywW&_nc_ohc=bnfhCUbl2IoQ7kNvgHj1zh2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&_nc_gid=AzY5bBOdUEmhEeN7-0f3PyO&oh=03_Q7cD1QFUubkztqfBOmoG3AkY9X44yNsuSTS7RwvcnSifSPS-6A&oe=67008A2C"></PromoteImage>
         <div className="text-center mt-32">
           <div className="text-center text-2xl font-bold sm:text-5xl">
             <h1
               className="bg-gradient-to-r
             from-[#00F2FE] from-21%
             to-[#4FACFE] bg-clip-text text-transparent mb-4
-            "
-            >
+            ">
               The more that you learn
             </h1>
             <h1 className="text-[#4B5563]">the more places you’ll go.</h1>
@@ -144,6 +142,14 @@ function MainPage() {
           ))}
         </div>
       </div>
+      <div className=" space-y-3 text-center">
+        <p className="text-sm text-main-blue font-semibold">GOT A QUESTION?</p>
+        <h1 className="text-3xl font-semibold text-[#4b5563] sm:text-4xl">
+          Things you might wonder
+        </h1>
+      </div>
+      <AccordionText></AccordionText>
+      <LandingPanel></LandingPanel>
       <Footer />
     </>
   );

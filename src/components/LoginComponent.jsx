@@ -6,6 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from 'react-router-dom';
 import { login } from '../api/userAPI';
 import { toast } from 'sonner';
+import { useLoginStore } from '../store/store';
 export default function LoginComponent({ onRegisterClick, option }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +19,8 @@ export default function LoginComponent({ onRegisterClick, option }) {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
+  const setIsLoggedIn = useLoginStore((state) => state.setIsLoggedIn);
 
   const handleLogin = async () => {
     try {
@@ -35,6 +38,7 @@ export default function LoginComponent({ onRegisterClick, option }) {
           textAlign: "center",
         },
       });
+      setIsLoggedIn(true);
       navigate('/app');
     } catch (error) {
       console.log(error);

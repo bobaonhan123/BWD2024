@@ -57,7 +57,7 @@ function LeftBar() {
             className={`
           flex items-center justify-center ${blue("dashboard")}`}
           >
-            <FontAwesomeIcon icon={faHouse} className="pr-1" /> Dashboard
+            <FontAwesomeIcon icon={faHouse} className="pr-1 mr-3" /> Dashboard
           </p>
         </Link>
         <Link to="flashcards">
@@ -65,7 +65,7 @@ function LeftBar() {
             className={`
           flex items-center justify-center ${blue("flashcard")}`}
           >
-            <FontAwesomeIcon icon={faNoteSticky} className="pr-1" />
+            <FontAwesomeIcon icon={faNoteSticky} className="pr-1 mr-3" />
             Flashcards
           </p>
         </Link>
@@ -74,13 +74,19 @@ function LeftBar() {
             className="
           flex items-center justify-center"
           >
-            <FontAwesomeIcon icon={faFolder} className="pr-1" />
+            <FontAwesomeIcon icon={faFolder} className="pr-1 mr-3" />
             Collections
           </p>
         </Link>
-        <Link to="/">
-          <p>
-            <FontAwesomeIcon icon={faTabletScreenButton} className="pr-1" />
+        <Link to="ai">
+          <p
+            className={`
+          flex items-center justify-center ${blue("ai")}`}
+          >
+            <FontAwesomeIcon
+              icon={faTabletScreenButton}
+              className="pr-1 mr-3"
+            />
             Talk with AI
           </p>
         </Link>

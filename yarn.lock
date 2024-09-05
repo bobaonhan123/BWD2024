@@ -217,10 +217,10 @@
     "@babel/helper-validator-identifier" "^7.24.7"
     to-fast-properties "^2.0.0"
 
-"@esbuild/linux-x64@0.21.5":
+"@esbuild/win32-x64@0.21.5":
   version "0.21.5"
-  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.21.5.tgz"
-  integrity sha512-1rYdTpyv03iycF1+BhzrzQJCdOuAOtaqHTWJZCWvijKD2N5Xu0TtVC8/+1faWqcP9iBCWOmjmhoH94dH82BxPQ==
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.21.5.tgz"
+  integrity sha512-tQd/1efJuzPC6rCFwEvLtci/xNFcTZknmXs98FYDfGE4wP9ClFV98nyKrzJKVPMhdDnjzLhdUyMX4PsQAPjwIw==
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
@@ -259,12 +259,24 @@
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.5.2.tgz"
   integrity sha512-gBxPg3aVO6J0kpfHNILc+NMhXnqHumFxOmjYCFfOiLZfwhnnfhtsdA2hfJlDnj+8PjAs6kKQPenOTKj3Rf7zHw==
 
+"@fortawesome/fontawesome-common-types@6.6.0":
+  version "6.6.0"
+  resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.6.0.tgz"
+  integrity sha512-xyX0X9mc0kyz9plIyryrRbl7ngsA9jz77mCZJsUkLl+ZKs0KWObgaEBoSgQiYWAsSmjz/yjl0F++Got0Mdp4Rw==
+
 "@fortawesome/fontawesome-svg-core@^6.5.2", "@fortawesome/fontawesome-svg-core@~1 || ~6":
   version "6.5.2"
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.5.2.tgz"
   integrity sha512-5CdaCBGl8Rh9ohNdxeeTMxIj8oc3KNBgIeLMvJosBMdslK/UnEB8rzyDRrbKdL1kDweqBPo4GT9wvnakHWucZw==
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.5.2"
+
+"@fortawesome/free-brands-svg-icons@^6.6.0":
+  version "6.6.0"
+  resolved "https://registry.npmjs.org/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.6.0.tgz"
+  integrity sha512-1MPD8lMNW/earme4OQi1IFHtmHUwAKgghXlNwWi9GO7QkTfD+IIaYpIai4m2YJEzqfEji3jFHX1DZI5pbY/biQ==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.6.0"
 
 "@fortawesome/free-regular-svg-icons@^6.5.2":
   version "6.5.2"
@@ -273,12 +285,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.5.2"
 
-"@fortawesome/free-solid-svg-icons@^6.5.2":
-  version "6.5.2"
-  resolved "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.5.2.tgz"
-  integrity sha512-QWFZYXFE7O1Gr1dTIp+D6UcFUF0qElOnZptpi7PBUMylJh+vFmIedVe1Ir6RM1t2tEQLLSV1k7bR4o92M+uqlw==
+"@fortawesome/free-solid-svg-icons@^6.6.0":
+  version "6.6.0"
+  resolved "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.6.0.tgz"
+  integrity sha512-IYv/2skhEDFc2WGUcqvFJkeK39Q+HyPf5GHUrT/l2pKbtgEIv1al1TKd6qStR5OIwQdN1GZP54ci3y4mroJWjA==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "6.5.2"
+    "@fortawesome/fontawesome-common-types" "6.6.0"
 
 "@fortawesome/react-fontawesome@^0.2.2":
   version "0.2.2"
@@ -381,15 +393,10 @@
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.17.0.tgz"
   integrity sha512-2D6XaHEVvkCn682XBnipbJjgZUU7xjLtA4dGJRBVUKpEaDYOZMENZoZjAOSb7qirxt5RupjzZxz4fK2FO+EFPw==
 
-"@rollup/rollup-linux-x64-gnu@4.18.0":
+"@rollup/rollup-win32-x64-msvc@4.18.0":
   version "4.18.0"
-  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.18.0.tgz"
-  integrity sha512-xuglR2rBVHA5UsI8h8UbX4VJ470PtGCf5Vpswh7p2ukaqBGFTnsfzxUBetoWBWymHMxbIG0Cmx7Y9qDZzr648w==
-
-"@rollup/rollup-linux-x64-musl@4.18.0":
-  version "4.18.0"
-  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.18.0.tgz"
-  integrity sha512-LKaqQL9osY/ir2geuLVvRRs+utWUNilzdE90TpyoX0eNqPzWjRm14oMEE+YLve4k/NAqCdPkGYDaDF5Sw+xBfg==
+  resolved "https://registry.npmjs.org/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.18.0.tgz"
+  integrity sha512-UOo5FdvOL0+eIVTgS4tIdbW+TtnBLWg1YBCcU2KWM7nuNwRz9bksDX1bekJJCpu25N1DVWaCwnT39dVQxzqS8g==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
@@ -2726,10 +2733,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-use-sync-external-store@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
-  integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+use-sync-external-store@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz"
+  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
 
 util-deprecate@^1.0.2:
   version "1.0.2"
@@ -2852,9 +2859,9 @@ yocto-queue@^0.1.0:
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
-zustand@^4.5.2:
-  version "4.5.2"
-  resolved "https://registry.npmjs.org/zustand/-/zustand-4.5.2.tgz"
-  integrity sha512-2cN1tPkDVkwCy5ickKrI7vijSjPksFRfqS6237NzT0vqSsztTNnQdHw9mmN7uBdk3gceVXU0a+21jFzFzAc9+g==
+zustand@^4.5.5:
+  version "4.5.5"
+  resolved "https://registry.npmjs.org/zustand/-/zustand-4.5.5.tgz"
+  integrity sha512-+0PALYNJNgK6hldkgDq2vLrw5f6g/jCInz52n9RTpropGgeAf/ioFUCdtsjCqu4gNhW9D01rUQBROoRjdzyn2Q==
   dependencies:
-    use-sync-external-store "1.2.0"
+    use-sync-external-store "1.2.2"
