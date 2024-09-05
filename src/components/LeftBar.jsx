@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { faHouse, faTabletScreenButton } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHouse,
+  faTabletScreenButton,
+} from "@fortawesome/free-solid-svg-icons";
 import { faNoteSticky, faFolder } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation } from "react-router-dom";
@@ -7,12 +10,12 @@ import { useLocation } from "react-router-dom";
 function LeftBar() {
   let location = useLocation();
 
-  const blue = (inp)=> {
+  const blue = (inp) => {
     if (location.pathname.includes(inp)) {
       return `text-[#4FACFE]`;
     }
     return ``;
-  }
+  };
   return (
     <div
       className={`fixed
@@ -50,32 +53,42 @@ function LeftBar() {
             shadow-md"
       >
         <Link to="dashboard">
-          <p className={`
-          flex items-center justify-center ${blue("dashboard")}`}>
-            <FontAwesomeIcon icon={faHouse} 
-            className="pr-1"/> Dashboard</p>
+          <p
+            className={`
+          flex items-center justify-center ${blue("dashboard")}`}
+          >
+            <FontAwesomeIcon icon={faHouse} className="pr-1 mr-3" /> Dashboard
+          </p>
         </Link>
         <Link to="flashcards">
-          <p className={`
-          flex items-center justify-center ${blue("flashcard")}`}>
-            <FontAwesomeIcon icon={faNoteSticky}
-            className="pr-1" />
-            Flashcards</p>
+          <p
+            className={`
+          flex items-center justify-center ${blue("flashcard")}`}
+          >
+            <FontAwesomeIcon icon={faNoteSticky} className="pr-1 mr-3" />
+            Flashcards
+          </p>
         </Link>
         <Link to="/">
-        
-          <p className="
-          flex items-center justify-center">
-          <FontAwesomeIcon icon={faFolder}
-            className="pr-1"  />
-          Collections</p>
+          <p
+            className="
+          flex items-center justify-center"
+          >
+            <FontAwesomeIcon icon={faFolder} className="pr-1 mr-3" />
+            Collections
+          </p>
         </Link>
         <Link to="ai">
-          <p className={`
-          flex items-center justify-center ${blue("ai")}`}>
-          <FontAwesomeIcon icon={faTabletScreenButton} 
-          className="pr-1" />
-          Talk with AI</p>
+          <p
+            className={`
+          flex items-center justify-center ${blue("ai")}`}
+          >
+            <FontAwesomeIcon
+              icon={faTabletScreenButton}
+              className="pr-1 mr-3"
+            />
+            Talk with AI
+          </p>
         </Link>
       </div>
       <button
