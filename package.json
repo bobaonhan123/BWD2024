@@ -21,6 +21,7 @@
     "react-dom": "^18.3.1",
     "react-quizlet-flashcard": "^3.0.0",
     "react-router-dom": "^6.24.0",
+    "react-spinners": "^0.14.1",
     "react-toastify": "^10.0.5",
     "sonner": "^1.5.0",
     "uuid": "^10.0.0",

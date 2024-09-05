@@ -7,17 +7,16 @@ import { useDisclosure } from "../../hooks/common/use-disclosure";
 import Modal from "../common/Modal";
 import ImportModalContent from "./ImportModalContent";
 import { createFlashcardSet } from "../../api/flashcardAPI"; // Import the API service
-
 import { generateContent } from "../../api/geminiAPI";
-
-
 import { toast } from "sonner";
+import { ClipLoader } from "react-spinners"; // Import ClipLoader from react-spinners
 
 function FlashcardForm() {
   const [flashcards, setFlashcards] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const { isOpen, open, close } = useDisclosure();
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
 
   const addFlashcard = () => {
     const newFlashcard = { id: uuidv4(), term: "", meaning: "" }; // Tạo ID duy nhất
@@ -98,7 +97,8 @@ function FlashcardForm() {
   };
 
   const handleAiGen = async () => {
-    const promt = `with topic ${title} ${description}, help me create the flashcard set include 20 word and the response must be An array of vocabulary with a similar structure to term: item.word, 
+    setIsLoading(true); // Set loading to true when starting the API call
+    const promt = `with topic ${title} ${description}, help me create the flashcard set include 10 word and the response must be An array of vocabulary with a similar structure to term: item.word, 
         meaning: item.definition, 
         example: item.example || "", 
         type: item.type || "",
@@ -137,6 +137,8 @@ function FlashcardForm() {
       console.log("AI generated flashcards:", generatedFlashcards);
     } catch (error) {
       console.error("Error generating flashcards with AI:", error);
+    } finally {
+      setIsLoading(false); // Set loading to false after the API call is done
     }
   };
 
@@ -172,8 +174,9 @@ function FlashcardForm() {
                bg-gradient-to-r from-main-blue to-second-blue
                rounded-md text-white"
               onClick={handleAiGen}
+              disabled={isLoading} // Disable button when loading
             >
-              <FontAwesomeIcon icon={faCrown} /> AI Generate
+              {isLoading ? <ClipLoader size={20} color={"#fff"} /> : <><FontAwesomeIcon icon={faCrown} /> AI Generate</>}
             </button>
           </div>
         </div>
