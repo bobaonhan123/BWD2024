@@ -12,8 +12,9 @@ const FloatingButton = () => {
   };
 
   return (
-    <div className="floating-button-container">
-      <button className="floating-button" onClick={toggleChatBox}>
+    <div className="floating-button-container ">
+      <button className="floating-button bg-gradient-to-r from-[#4FACFE]
+       to-[#00F2FE] from-21%" onClick={toggleChatBox}>
         <FontAwesomeIcon icon={faMessage} className="text-white w-6" />
       </button>
       {showChat && <ChatBox onClose={toggleChatBox} />}
