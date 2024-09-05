@@ -7,7 +7,12 @@ import { useDisclosure } from "../../hooks/common/use-disclosure";
 import Modal from "../common/Modal";
 import ImportModalContent from "./ImportModalContent";
 import { createFlashcardSet } from "../../api/flashcardAPI"; // Import the API service
+
+import { generateContent } from "../../api/geminiAPI";
+
+
 import { toast } from "sonner";
+
 function FlashcardForm() {
   const [flashcards, setFlashcards] = useState([]);
   const [title, setTitle] = useState("");
@@ -24,9 +29,11 @@ function FlashcardForm() {
   };
 
   const updateFlashcard = (id, field, value) => {
-    setFlashcards(flashcards.map(flashcard =>
-      flashcard.id === id ? { ...flashcard, [field]: value } : flashcard
-    ));
+    setFlashcards(
+      flashcards.map((flashcard) =>
+        flashcard.id === id ? { ...flashcard, [field]: value } : flashcard
+      )
+    );
   };
 
   const handleCreateSet = async () => {
@@ -46,7 +53,7 @@ function FlashcardForm() {
     const flashcardSet = {
       title,
       description,
-      vocabularies: flashcards.map(flashcard => ({
+      vocabularies: flashcards.map((flashcard) => ({
         word: flashcard.term,
         definition: flashcard.meaning,
         example: "", // Add example if available
@@ -54,12 +61,15 @@ function FlashcardForm() {
         pronounce: "", // Add pronounce if available
         imageURL: "", // Add imageURL if available
         isRemember: false,
-        user: { id: 1 } // Replace with actual user ID
-      }))
+        user: { id: 1 }, // Replace with actual user ID
+      })),
     };
 
     try {
       const response = await createFlashcardSet(flashcardSet);
+
+      console.log("Flashcard set created:", response);
+
       if (response.status === 201) {
         toast.success('Create flashcard set successfully!', {
           position: "top-right",
@@ -84,8 +94,52 @@ function FlashcardForm() {
           },
         });
       }
+
     } catch (error) {
-      console.error('Error creating flashcard set:', error);
+      console.error("Error creating flashcard set:", error);
+    }
+  };
+
+  const handleAiGen = async () => {
+    const promt = `with topic ${title} ${description}, help me create the flashcard set include 20 word and the response must be An array of vocabulary with a similar structure to term: item.word, 
+        meaning: item.definition, 
+        example: item.example || "", 
+        type: item.type || "",
+        pronounce: item.pronounce || "", 
+        isRemember: false,
+        without any addition information and description, just data I need, remember I just accept json
+        `;
+    try {
+      // Gọi API để tạo nội dung AI cho flashcards
+      let aiGeneratedContent = await generateContent(promt);
+
+      console.log(aiGeneratedContent); // Xác nhận dữ liệu đầu vào là mảng
+
+      aiGeneratedContent = aiGeneratedContent
+        .replace(/```json/g, "")
+        .replace(/```/g, "")
+        .trim();
+      // Chuyển đổi chuỗi JSON thành mảng đối tượng
+      const parsedContent = await JSON.parse(aiGeneratedContent);
+
+      console.log(parsedContent); // Kiểm tra dữ liệu đã được chuyển đổi thành mảng
+      // Sử dụng map để chuyển đổi mảng từ vựng thành flashcards
+      const generatedFlashcards = parsedContent.map((item) => ({
+        id: uuidv4(), // Tạo ID duy nhất cho mỗi flashcard mới
+        term: item.word, // Từ vựng từ parsedContent
+        meaning: item.meaning, // Định nghĩa từ parsedContent
+        example: item.example || "", // Câu ví dụ nếu có
+        type: item.type || "", // Loại từ nếu có
+        pronounce: item.pronounce || "", // Phiên âm nếu có
+        imageURL: item.imageURL || "", // Đường dẫn ảnh nếu có
+        isRemember: item.isRemember || false, // Đặt mặc định là chưa nhớ
+      }));
+
+      setFlashcards([...flashcards, ...generatedFlashcards]);
+
+      console.log("AI generated flashcards:", generatedFlashcards);
+    } catch (error) {
+      console.error("Error generating flashcards with AI:", error);
     }
   };
 
@@ -120,6 +174,7 @@ function FlashcardForm() {
               className="w-full p-2 font-semibold
                bg-gradient-to-r from-main-blue to-second-blue
                rounded-md text-white"
+              onClick={handleAiGen}
             >
               <FontAwesomeIcon icon={faCrown} /> AI Generate
             </button>
@@ -152,7 +207,10 @@ function FlashcardForm() {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={close}>
-        <ImportModalContent flashcardState={[flashcards, setFlashcards]} closeModal={close} />
+        <ImportModalContent
+          flashcardState={[flashcards, setFlashcards]}
+          closeModal={close}
+        />
       </Modal>
     </>
   );

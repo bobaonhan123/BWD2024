@@ -1,11 +1,22 @@
-// ../components/SearchAndCategory.js
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export default function SearchAndCategory({ category, setCategory }) {
+export default function SearchAndCategory({
+  category,
+  setCategory,
+  onCategoryChange,
+}) {
+  const [activeTab, setActiveTab] = useState(category);
+
   const handleCategoryClick = (e) => {
-    setCategory(e.target.id);
+    const newCategory = e.target.id;
+    setCategory(newCategory);
+    setActiveTab(newCategory);
+    if (onCategoryChange) {
+      onCategoryChange(newCategory);
+    }
   };
 
   return (
@@ -26,8 +37,11 @@ export default function SearchAndCategory({ category, setCategory }) {
               id={tab}
               className={`
                 cursor-pointer
-                bg-white
-                text-[#6C7580]
+                ${
+                  activeTab === tab
+                    ? "bg-[#E8F2FF] text-[#35509A]"
+                    : "bg-white text-[#6C7580]"
+                }
                 px-10
                 rounded-full
                 h-8
@@ -36,7 +50,7 @@ export default function SearchAndCategory({ category, setCategory }) {
                 border-[#6c758056]
                 flex items-center
                 mr-2
-                ${category === tab ? "bg-[#E8F2FF] text-[#35509A]" : ""}
+                transition-colors duration-300
               `}
               onClick={handleCategoryClick}
             >
