@@ -16,7 +16,7 @@ const data = [
   {
     name: "Platform Compatibility",
     description:
-      "Although Takeiteasy is primarily designed for desktop usage, some features are still available on mobile and tablet browsers. For the best experience, we recommend accessing Vocala through a desktop browser. However, we are planning to release a dedicated mobile version in the future.",
+      "Although Take it easy is primarily designed for desktop usage, some features are still available on mobile and tablet browsers. For the best experience, we recommend accessing Take it easy through a desktop browser. However, we are planning to release a dedicated mobile version in the future.",
   },
   {
     name: "Language Learning Recommendation",
@@ -54,7 +54,8 @@ function AccordionText() {
             <button
               className="flex w-full select-none justify-between py-5 text-left text-lg font-medium outline-none"
               type="button"
-              onClick={() => handleToggle(index)}>
+              onClick={() => handleToggle(index)}
+            >
               <span>{item.name}</span>
               <FontAwesomeIcon
                 icon={faPlus}
