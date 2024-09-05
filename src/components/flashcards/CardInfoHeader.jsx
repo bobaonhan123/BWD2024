@@ -1,12 +1,12 @@
 import { faFolder } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function CardInfoHeader() {
+function CardInfoHeader({title}) {
   return (
     <div className="p-5 bg-white rounded-2xl w-2/3 shadow-md">
       <div className="flex flex-col items-start space-y-4">
         <h1 className="text-xl font-semibold text-main-text">
-          Cambridge Vocabulary for IELTS (20 units)
+          {title}
         </h1>
         <div className="flex items-center space-x-2 text-gray-600 text-normal-text">
           <img
@@ -16,10 +16,10 @@ function CardInfoHeader() {
           />
           <span>Bao Nhom Ho Sy</span>
           <div></div>
-          <div className="flex items-center space-x-1">
+          {/* <div className="flex items-center space-x-1">
             <FontAwesomeIcon icon={faFolder} />
             <span>IELTS</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

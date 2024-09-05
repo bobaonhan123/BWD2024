@@ -31,12 +31,14 @@ function LearningPage() {
   const cardsetId = paths[paths.length - 2];
   console.log(cardsetId);
   const [cards, setCards] = useState([]);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       const response = await getDetailCardSet(cardsetId);
       setCards(response);
       console.log("rp:",response);
+      setTitle(response.title);
       const cardstmp = response.vocabularies;
       console.log("cardstmp:",cardstmp);
       const cardsetdata = [];
@@ -62,7 +64,7 @@ function LearningPage() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-3/5">
       <SearchAndCategory />
       <div className="flex flex-col items-center mt-8">
-        <CardInfoHeader />
+        <CardInfoHeader title={title}/>
         <div className="h-6"></div>
         <FlashcardArray
           frontContentStyle={{
