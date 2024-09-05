@@ -79,13 +79,13 @@ function LeftBar() {
             Flashcards
           </p>
         </Link>
-        <Link to="/">
+        <Link to="correction">
           <p
             className="
           flex items-center justify-center"
           >
             <FontAwesomeIcon icon={faFolder} className="pr-1 mr-3" />
-            Collections
+            Correction
           </p>
         </Link>
         <Link to="ai">

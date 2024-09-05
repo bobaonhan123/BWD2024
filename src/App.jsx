@@ -13,6 +13,7 @@ import CreatePage from "./Pages/CreatePage";
 import CardDetails from "./Pages/CardDetails";
 import PricingPage from "./Pages/PricingPage";
 import AIPage from "./Pages/AIPage";
+import Correction from "./Pages/DashboardPages/Correction";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               element={<LearningPage />}
             />
             <Route path="ai" element={<AIPage />} />
+            <Route path="correction" element={<Correction />} />
           </Route>
           
           <Route path="pricing" element={<PricingPage />} />
