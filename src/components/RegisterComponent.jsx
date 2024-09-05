@@ -44,20 +44,20 @@ export default function RegisterComponent({ onLoginClick, option }) {
       const response = await register(fullname, email, password, true)
       console.log(response)
       if (!response.email) {
-        throw new Error('Register failed. Please check your email or password.', {
-          position: "top-right",
-          autoClose: 2000,
-          style: {
-            color: "green",
-            fontWeight: "bold",
-            textAlign: "center",
-          },
-        })
+        throw new Error('Register failed. Please check your email or password.')
       }
       setFullname('')
       setEmail('')
       setPassword('')
-      toast.success('Register successfully!')
+      toast.success('Register successfully!', {
+        position: "top-right",
+        autoClose: 2000,
+        style: {
+          color: "green",
+          fontWeight: "bold",
+          textAlign: "center",
+        },
+      })
       onLoginClick()
     }
     catch (error) {
