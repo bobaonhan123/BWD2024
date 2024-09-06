@@ -79,7 +79,7 @@ function RightBar() {
           <div className="flex flex-col items-center w-1/2">
             <p className="text-[#6C7580]">Level</p>
             <h1 className="text-[#4b5563] font-semibold text-3xl">
-              {info.level}
+              1
             </h1>
           </div>
         </div>
