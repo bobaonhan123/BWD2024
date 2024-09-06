@@ -61,7 +61,7 @@ function RightBar() {
     ${lowOpacity("ai")}
     hover:opacity-100`}
     >
-      <div className="flex flex-col items-center mt-28 bg-white w-5/6 rounded-3xl relative pt-10 shadow-md">
+      <div className="flex flex-col items-center mt-28 bg-white w-5/6 rounded-3xl relative pt-8 pl-3 pr-3 pb-3 shadow-md">
         <img
           src="https://scontent.fdad1-3.fna.fbcdn.net/v/t1.15752-9/456681963_527391563105988_5779884790602890748_n.png?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=gbnpLui0-HwQ7kNvgFb5BLz&_nc_ht=scontent.fdad1-3.fna&oh=03_Q7cD1QFn66Q5Z4AhXEecjxWRFHbenGGy1VQulJKSNMypLAxEZw&oe=67013A35"
           alt="avt"
