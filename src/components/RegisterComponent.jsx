@@ -3,6 +3,7 @@ import { useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'sonner'
 import { register } from '../api/userAPI'
+import { ClipLoader } from 'react-spinners' // Import the spinner
 
 import logo from '../assets/images/google_logo.svg'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -13,6 +14,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [loading, setLoading] = useState(false) // Add loading state
 
   const handleFullnameChange = (e) => {
     setFullname(e.target.value)
@@ -37,6 +39,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
   }
 
   const handleRegister = async () => {
+    setLoading(true) // Set loading to true
     try {
       if (password !== confirmPassword) {
         throw new Error('Password and confirm password do not match')
@@ -61,7 +64,7 @@ export default function RegisterComponent({ onLoginClick, option }) {
       onLoginClick()
     }
     catch (error) {
-      toast.error(error.message,
+      toast.error("Email already exists",
         {
           position: "top-right",
           autoClose: 2000,
@@ -73,6 +76,8 @@ export default function RegisterComponent({ onLoginClick, option }) {
         }
       )
       console.log(error)
+    } finally {
+      setLoading(false) // Set loading to false
     }
   }
 
@@ -142,13 +147,17 @@ export default function RegisterComponent({ onLoginClick, option }) {
                     flex items-center rounded-full justify-center
                     text-white
       max-md:mx-4'
-        onClick={handleRegister} >
-        <p className='text-lg pr-2
+        onClick={handleRegister} disabled={loading} > {/* Disable button when loading */}
+        {loading ? <ClipLoader size={24} color={"#ffffff"} /> : ( // Use spinner when loading
+          <>
+            <p className='text-lg pr-2
       max-md:mx-4 max-md:text-base'
-        >
-          Register
-        </p>
-        <FontAwesomeIcon icon={faArrowRight} />
+            >
+              Register
+            </p>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </>
+        )}
       </button>
       <p className='text-[#6C7580] text-sm mx-4'>
         Have an Account already? <span className='font-semibold

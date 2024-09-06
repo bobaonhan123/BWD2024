@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MainButton from "./MainButton";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-function Review() {
+function Review({ data }) {
   return (
     <div className=" bg-white rounded-xl text-gray-normal px-8
     py-8 flex flex-col justify-between space-y-4 basis-2/5 shadow-md">
@@ -13,7 +13,7 @@ function Review() {
         Your review
       </h1>
       <p className="text-center text-sm text-gray-normal">
-        <span className="text-gray-normal font-semibold text-5xl mr-3 ">4</span>
+        <span className="text-gray-normal font-semibold text-5xl mr-3 ">{data}</span>
         words
       </p>
       <button className="bg-gradient-to-r

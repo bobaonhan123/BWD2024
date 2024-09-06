@@ -14,7 +14,7 @@ export default function DashBoardPage() {
         <div className="flex flex-col space-y-6">
           <FindNewWord />
           <div className="flex flex-row space-x-6">
-            <Review />
+            <Review data={4} />
             <MemorizeChart />
           </div>
           <div className="flex flex-row space-x-6 ">
