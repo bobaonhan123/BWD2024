@@ -76,8 +76,7 @@ const ChatBox = ({ onClose }) => {
         <div className="chat-box-close-bot">
           <p
             className="text-white 
-        text-left font-semibold
-        text-xl
+        text-left font-semibold pl-2
         w-full my-4">
             AI chat box
           </p>
