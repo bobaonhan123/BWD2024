@@ -29,7 +29,7 @@ export default function Correction() {
   return (
     <div className="w-3/5 mx-auto pt-8 h-screen">
       <textarea
-        className="w-full h-2/5 p-4 rounded-3xl shadow-lg"
+        className="w-full h-2/5 p-4 rounded-3xl shadow-lg resize-none"
         value={input}
         onChange={handleInputChange}
       ></textarea>
@@ -41,11 +41,11 @@ export default function Correction() {
         {loading ? (
           <ClipLoader size={24} color={"#ffffff"} /> // Show spinner when loading
         ) : (
-          "Ask ChatGPT"
+          "Check Grammar"
         )}
       </button>
       <textarea
-        className="w-full h-2/5 p-4 rounded-3xl shadow-lg"
+        className="w-full h-2/5 p-4 rounded-3xl shadow-lg resize-none"
         value={content}
         readOnly
       ></textarea>

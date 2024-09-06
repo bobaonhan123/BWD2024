@@ -70,7 +70,9 @@
     align-self: flex-start;
     text-align: left;
   }
-  
+  .chat-box-close-bot p{
+    font-size: 18px;
+  }
   .chat-box-input {
     display: flex;
     border-top: 1px solid #ddd;
@@ -81,8 +83,15 @@
     flex: 1;
     border: none;
     padding: 10px;
+    border: 1px solid #d1d5db; 
     border-radius: 0 0 0 8px;
+    font-size: 15px;
+    color: "#6C7580";
   }
+  .chat-box-input input:focus {
+    border-color: #6C7580;
+    outline: none; 
+}
   
   .chat-box-input button {
     border: none;
